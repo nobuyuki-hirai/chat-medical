@@ -1,24 +1,82 @@
-# README
+## Usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| last_name          | string | null, false               |
+| first_name         | string | null, false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null, false               |
+| job                | string | null, false               |
+| hobby              | string | null, false               |
+| context            | string | null, false               |
 
-Things you may want to cover:
+### Association
 
-* Ruby version
+- has_many :rooms
+- has_many :user_rooms
+- has_many :messages
+- has_many :relationships
+- has_many :events
 
-* System dependencies
+## roomsテーブル
 
-* Configuration
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| title              | string     | null, false                    |
+| user               | references | null, false, foreign_key: true |
 
-* Database creation
+### Association
 
-* Database initialization
+- has_many :users
+- has_many :user_rooms
+- has_many :messages
+- has_one  :event
 
-* How to run the test suite
+## user_roomsテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| user               | references | null, false, foreign_key: true |
+| room               | references | null, false, foreign_key: true |
 
-* Deployment instructions
+### Association
 
-* ...
+- belongs_to :user
+- belongs_to :room
+
+## messagesテーブル
+
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| context            | string     | null, false                    |
+| user               | references | null, false, foreign_key: true |
+| room               | references | null, false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :room
+
+## eventsテーブル
+
+| Column            | Type        | Options                         |
+| text              | string      | null. false                     |
+| join              | integer     | null. false                     |
+| user              | references  | null, false, foreign_key: true  |
+| room              | references  | null, false, foreign_key: true  |
+
+### Association
+
+- belongs_to :user
+- belongs_to :room
+
+## relationshipsテーブル
+
+| Column            | Type        | Options                         |
+| follower_id       | integer     | null. false, foreign_key: true  |
+| followed_id       | integer     | null, false, foreign_key: true  |
+
+### Association
+
+- belongs_to :follower
+- belongs_to :followed

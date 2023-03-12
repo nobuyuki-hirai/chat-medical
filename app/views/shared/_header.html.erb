@@ -1,0 +1,40 @@
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <div class='header-right'>
+      <div class='header-title'>
+      <%= link_to image_tag("medical.png", class:"medical-icon"), "/" %>
+        <div class='header-chat'>Chat-
+        </div>
+        <div class='header-medical'>Medical
+        </div>
+      </div>
+    </div>
+    <div class='header-left'>
+      <ul class='user-access'>
+        <%# if user_signed_in? %>
+        <div class='nav-lists'>
+          <div class='mypage-btn'>
+            <%#= image_tag 'mypage-image.png', alt: 'mypage', class: 'mypage', width: 60, height: 60 %>
+            <li><%#= link_to , '#' class: "user-nickname" %></li>
+          </div>
+          <div class='logout-btn'>
+            <%#= image_tag 'logout-image.png', alt: 'logout', class: 'logout', width: 60, height: 60 %>
+            <li><%#= link_to 'ログアウト', '#', method: :delete, class: "logout" %></li>
+          </div>
+        </div>
+        <%# else %>
+        <div class='nav-lists'>
+          <div class='login-btn'>
+            <%= image_tag 'login-image.png', alt: 'login', class: 'login', width: 60, height: 60 %>
+            <li><%= link_to 'ログイン', '#', class: "login" %></li>
+          </div>
+          <div class='new-menber-btn'>
+            <%= image_tag 'new-name.png', alt: 'new-menber', class: 'new-menber', width: 60, height: 60 %>
+            <li><%= link_to '新規登録', '#', class: "sign-up" %></li>
+          </div>
+        </div>
+        <%# end %>
+      </ul>
+    </div>
+  </div>
+</header>

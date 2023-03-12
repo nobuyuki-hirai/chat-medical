@@ -1,0 +1,99 @@
+<%= render "shared/header" %>
+
+<div class='main'>
+
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      介護業界を繋げるアプリ
+    </h2>
+    <p class='service-explain'>
+      どこに居ても<span>リアルタイム</span>で繋がる事ができる
+    </p>
+    <p class='service-explain'>
+      チャットアプリ
+    </p>
+  </div>
+
+  <div class='select-reason-contents'>
+    <h2 class='title'>
+      Chat-Medicalの特徴
+    </h2>
+    <ul class='reason-lists'>
+      <li class='list'>
+        <%= image_tag "kaigo-jitensha.png", class:"list-pict" %>
+        <h3 class='reason-list-text'>
+          <span class='reason-list-blue-text'>移動中</span>
+          に<br>情報共有
+        </h3>
+        <p class='reason-list-description'>
+          スマホで気軽に連絡が取り合える！
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "header-time.png", class:"list-pict" %>
+        <h3 class='reason-list-text'>
+          <span class='reason-list-blue-text'> スケジュール </span>
+          の<br>管理・共有
+        </h3>
+        <p class='reason-list-description'>
+          担当者でスケジュールの共有ができる！
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "header-com.png", class:"list-pict" %>
+        <h3 class='reason-list-text'>
+          <span class='reason-list-blue-text'>コミュニティ</span>
+          <br>で繋がる
+        </h3>
+        <p class='reason-list-description'>
+          フォロー機能で地域の医療従事者と繋がろう
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <div class='caht-main'>
+    <div class='room-contents'>
+    <h2 class='title'>チャットルーム一覧表</h2>
+      <form class="search-form" action="#">
+        <input class='input-box' placeholder='チャットルームを検索'>
+        <button class="search-button">
+          <%= image_tag "search.png", class:"search-icon" %>
+        </button>
+      </form>
+    <ul class='room-lists'>
+    <%# @items.each do |item| %>
+      <li class='list'>
+        <%#= link_to '#' do %>
+          <div class='room-img-content'>
+            <%#= image_tag '#', class: "item-img" %>
+          </div>
+          <div class='room-info'>
+            <h3 class='room-name'>
+              <%#= room.title %>
+            </h3>
+          </div>
+        <%# end %>
+      </li>
+    <%# end %>
+      <%# if @items.length == 0 %>
+      <li class='list'>
+        <%#= link_to '#' do %>
+        <%= image_tag "icon-first", class: "room-img" %>
+        <div class='room-info'>
+          <div class='room-image'>
+          </div>
+          <h3 class='room-name'>
+            チャットルーム名<br>を入力しよう
+          </h3>
+        </div>
+        <%# end %>
+      </li>
+      <%# end %>
+    </ul>
+  </div>
+</div>
+<%= link_to(root_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>ルーム作成</span>
+  <%= image_tag 'doctor.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>

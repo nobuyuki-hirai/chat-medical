@@ -8,13 +8,14 @@ a {
 
 .title-contents {
   width: 100vw;
+  height: 100vh;
   background-image: url('kaigo-header.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   padding: 5vh 15vw;
   color: #fff;
@@ -22,7 +23,7 @@ a {
   position: relative;
 }
 
-.title-contents::after {
+.title-contents::before {
   content: "";
   display: block;
   position: absolute;
@@ -30,20 +31,24 @@ a {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.6);
 }
 
 .service-title {
   font-size: 10vh;
   line-height: 40px;
   color: #000000;
+  position: absolute;
+  top: 20;
 }
 
 .service-explain {
   font-size: 6vh;
-  line-height: 90px;
+  line-height: 300px;
   font-weight: 600;
   color: #000000;
+  position: absolute;
+  top: 0;
 }
 
 span {
@@ -112,6 +117,7 @@ span {
   font-weight: bold;
   font-size: 24px;
   line-height: 50px;
+  text-align: center;
 }
 
 .reason-list-blue-text {
@@ -121,6 +127,7 @@ span {
 .reason-list-description {
   font-size: 18px;
   margin-top: 20px;
+  text-align: center;
 }
 
 /* チャットメイン部分 */

@@ -1,14 +1,14 @@
 ## Usersテーブル
 
-| Column             | Type   | Options                   |
-| ------------------ | ------ | ------------------------- |
-| last_name          | string | null, false               |
-| first_name         | string | null, false               |
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null, false               |
-| job                | string | null, false               |
-| hobby              | string | null, false               |
-| context            | string | null, false               |
+| Column             | Type    | Options                   |
+| ------------------ | ------- | ------------------------- |
+| last_name          | string  | null, false               |
+| first_name         | string  | null, false               |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null, false               |
+| job                | integer | null, false               |
+| hobby              | string  | null, false               |
+| context            | string  | null, false               |
 
 ### Association
 

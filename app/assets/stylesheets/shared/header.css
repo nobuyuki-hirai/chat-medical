@@ -47,83 +47,62 @@
 
 .header-left {
   width: 100vw;
-  font-size: 18px;
+  font-size: 10px;
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
-}
-
-.user-access {
-  list-style: none;
+  margin-right: 2vw;
 }
 
 .nav-lists {
   display: flex;
   justify-content: space-between;
-  margin-right: 2vw;
+  text-decoration: none;
 }
 
-.mypage-btn {
+ul.mypage-btn {
   padding: 0 2vw;
+  margin: 0 2vw 2vh 0;
   background-color: #fb7185;
   border-radius: 10px;
   box-shadow: 5px 5px 5px black;
   text-align: center;
+  list-style: none;
 }
 
-.user-nickname {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: #000000;
-  font-weight: bold;
-  padding-top: 1vh;
-}
-
-.logout-btn {
+ul.logout-btn {
   padding: 0 2vw;
+  margin: 0 0 2vh 0;
   background-color: #fb7185;
   border-radius: 10px;
   box-shadow: 5px 5px 5px black;
   text-align: center;
+  list-style: none;
 }
 
-.logout {
-  text-decoration: none;
-  color: #333333;
-  padding-top: 1vh;
-}
-
-.login-btn {
+ul.login-btn {
+  height: 12vh;
   background-color: #ccfbf1;
-  padding: 0 2vw;
-  margin-right: 2vw;
+  padding: 0 3vw;
+  margin: 0 2vw 2vh 0;
   border-radius: 10px;
   box-shadow: 5px 5px 5px black;
   text-align: center;
+  list-style: none;
 }
 
-.login {
-  text-decoration: none;
-  line-height: 32px;
-  color: #000000;
-  filter: brightness(50%) hue-rotate(90deg);
-  padding-top: 1vh;
-}
-
-.sign-up {
-  text-decoration: none;
-  color: #000000;
-}
-
-.new-menber-btn {
+ul.new-member-btn {
+  height: 12vh;
   background-color: #ccfbf1;
-  padding: 0 2vw;
+  margin: 0 0 2vh 0;
+  padding: 0 3vw;
   border-radius: 10px;
   box-shadow: 5px 5px 5px black;
   text-align: center;
+  list-style: none;
 }
 
-.new-menber {
+.new-member {
   text-decoration: none;
   line-height: 32px;
   color: #000000;

@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2023_03_13_193530) do
     t.string "first_name", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.integer "job", null: false
+    t.integer "job_id", null: false
     t.string "hobby", default: "", null: false
     t.string "context", default: "", null: false
     t.string "reset_password_token"

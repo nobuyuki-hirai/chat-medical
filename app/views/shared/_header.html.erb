@@ -10,31 +10,31 @@
       </div>
     </div>
     <div class='header-left'>
-      <ul class='user-access'>
+      <div class='user-access'>
         <%# if user_signed_in? %>
         <div class='nav-lists'>
-          <div class='mypage-btn'>
-            <%#= image_tag 'mypage-image.png', alt: 'mypage', class: 'mypage', width: 60, height: 60 %>
-            <li><%#= link_to , '#' class: "user-nickname" %></li>
-          </div>
-          <div class='logout-btn'>
-            <%#= image_tag 'logout-image.png', alt: 'logout', class: 'logout', width: 60, height: 60 %>
-            <li><%#= link_to 'ログアウト', '#', method: :delete, class: "logout" %></li>
-          </div>
+          <ul class='mypage-btn'>
+            <li><%#= link_to(image_tag("mypage-image.png",alt: "login",width: 40, height: 40),'#')%></li>
+            <!--li class='user_name'>マイページ</li-->
+          </ul>
+          <ul class='logout-btn'>
+            <li><%#= link_to(image_tag("logout-image.png",alt: "login",width: 40, height: 40),'#')%></li>
+            <!--li class='user_name'>ログアウト</li-->
+          </ul>
         </div>
         <%# else %>
         <div class='nav-lists'>
-          <div class='login-btn'>
-            <%= image_tag 'login-image.png', alt: 'login', class: 'login', width: 60, height: 60 %>
-            <li><%= link_to 'ログイン', '#', class: "login" %></li>
-          </div>
-          <div class='new-menber-btn'>
-            <%= image_tag 'new-name.png', alt: 'new-menber', class: 'new-menber', width: 60, height: 60 %>
-            <li><%= link_to '新規登録', '#', class: "sign-up" %></li>
-          </div>
+          <ul class='login-btn'>
+            <li><%= link_to(image_tag("login-image.png",alt: "login",width: 40, height: 40), new_user_session_path )%></li>
+            <li class='user_name'>ログイン</li>
+          </ul>
+          <ul class='new-member-btn'>
+            <li><%= link_to(image_tag("new-name.png",alt: "new-member",width: 40, height: 40), new_user_registration_path )%></li>
+            <li class='user_name'>新規登録</li>
+          </ul>
         </div>
         <%# end %>
-      </ul>
+      </div>
     </div>
   </div>
 </header>

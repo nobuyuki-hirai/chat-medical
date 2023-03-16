@@ -16,6 +16,7 @@ class User < ApplicationRecord
   validates :password, format: { with: VALID_PASSWORD_REGEX }
   validates :hobby,                 presence: true
   validates :context,               presence: true
+  validates :image,                 presence: true
   validates :job_id,                numericality: { other_than: 1, message: "can't be blank" }
   
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -24,4 +25,6 @@ class User < ApplicationRecord
   def active_hash_model
     ActiveHashModel.find(job_id)
   end
+
+  mount_uploader :image, ImageUploader
 end

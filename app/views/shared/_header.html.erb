@@ -11,29 +11,29 @@
     </div>
     <div class='header-left'>
       <div class='user-access'>
-        <%# if user_signed_in? %>
+      <% if user_signed_in? %>
         <div class='nav-lists'>
-          <ul class='mypage-btn'>
-            <li><%#= link_to(image_tag("mypage-image.png",alt: "login",width: 40, height: 40),'#')%></li>
-            <!--li class='user_name'>マイページ</li-->
+          <ul class='user-btn mypage'>
+            <li><%= link_to(image_tag("mypage-image.png",alt: "mypage",width: 40, height: 40),new_user_session_path )%></li>
+            <li class='user_name'>マイページ</li>
           </ul>
-          <ul class='logout-btn'>
-            <li><%#= link_to(image_tag("logout-image.png",alt: "login",width: 40, height: 40),'#')%></li>
-            <!--li class='user_name'>ログアウト</li-->
+          <ul class='user-btn logout'>
+            <li><%= link_to(image_tag("logout-image.png",alt: "logout",width: 40, height: 40),destroy_user_session_path, method: :delete)%></li>
+            <li class='user_name'>ログアウト</li>
           </ul>
         </div>
-        <%# else %>
+      <% else %>
         <div class='nav-lists'>
-          <ul class='login-btn'>
+          <ul class='user-btn login'>
             <li><%= link_to(image_tag("login-image.png",alt: "login", width: 40, height: 40), new_user_session_path )%></li>
             <li class='user_name'>ログイン</li>
           </ul>
-          <ul class='new-member-btn'>
+          <ul class='user-btn signup'>
             <li><%= link_to(image_tag("new-name.png",alt: "new-member",width: 40, height: 40), new_user_registration_path )%></li>
             <li class='user_name'>新規登録</li>
           </ul>
         </div>
-        <%# end %>
+      <% end %>
       </div>
     </div>
   </div>

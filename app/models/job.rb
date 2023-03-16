@@ -13,8 +13,6 @@ class Job < ActiveHash::Base
     { id: 11, name: '義肢装具士' },
     { id: 12, name: '通所スタッフ'},
     { id: 13, name: 'その他' },
-  ]
+    ]
 
-  include ActiveHash::Associations
-  has_many :users
-  end
+end

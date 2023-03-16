@@ -50,6 +50,7 @@
   font-size: 10px;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   flex-wrap: wrap;
   margin-right: 2vw;
 }
@@ -57,60 +58,34 @@
 .nav-lists {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   text-decoration: none;
-  margin-top: 1vh;
 }
 
 .nav-lists img {
   margin-top: 1vh;
 }
 
-ul.mypage-btn {
-  padding: 0 2vw;
-  margin: 0 2vw 2vh 0;
-  background-color: #fb7185;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px black;
-  text-align: center;
-  list-style: none;
-}
-
-ul.logout-btn {
-  padding: 0 2vw;
-  margin: 0 0 2vh 0;
-  background-color: #fb7185;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px black;
-  text-align: center;
-  list-style: none;
-}
-
-ul.login-btn {
-  height: 12vh;
-  background-color: #ccfbf1;
+ul.user-btn {
   padding: 0 3vw;
-  margin: 0 2vw 2vh 0;
+  margin-bottom: 2vh;
   border-radius: 10px;
   box-shadow: 5px 5px 5px black;
   text-align: center;
-  list-style: none;
-}
-
-ul.new-member-btn {
-  height: 12vh;
   background-color: #ccfbf1;
-  margin: 0 0 2vh 0;
-  padding: 0 3vw;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px black;
-  text-align: center;
   list-style: none;
 }
 
-.new-member {
-  text-decoration: none;
-  line-height: 32px;
-  color: #000000;
-  filter: brightness(50%) hue-rotate(90deg);
-  padding-top: 1vh;
+.user-btn.mypage {
+  background-color: #fb7185;
+  margin-right: 2vw;
 }
+
+.user-btn.logout {
+  background-color: #fb7185;
+}
+
+.user-btn.login {
+  margin-right: 2vw;
+}
+

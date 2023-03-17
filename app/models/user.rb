@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :rooms
-  has_many :user_rooms
+  has_many :rooms, through: :user_rooms, dependent: :destroy
+  has_many :user_rooms, dependent: :destroy
   has_many :messages
   has_many :relationships
   has_many :events
@@ -25,6 +25,10 @@ class User < ApplicationRecord
 
   def active_hash_model
     ActiveHashModel.find(job_id)
+  end
+
+  def full_name
+    "#{last_name}#{first_name}(#{job[:name]})"
   end
 
   mount_uploader :image, ImageUploader

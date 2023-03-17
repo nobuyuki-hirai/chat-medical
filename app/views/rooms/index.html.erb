@@ -57,23 +57,23 @@
         </button>
       </form>
     <ul class='room-lists'>
-    <%# @items.each do |item| %>
+    <% @room_lists.each do |room| %>
       <li class='list'>
-        <%#= link_to '#' do %>
+        <%= link_to '#' do %>
           <div class='room-img-content'>
-            <%#= image_tag '#', class: "item-img" %>
+            <%= image_tag '#', class: "room-img" %>
           </div>
           <div class='room-info'>
             <h3 class='room-name'>
-              <%#= room.title %>
+              <%= room.title %>
             </h3>
           </div>
-        <%# end %>
+        <% end %>
       </li>
-    <%# end %>
-      <%# if @items.length == 0 %>
+    <% end %>
+      <% if @room_lists.length == 0 %>
       <li class='list'>
-        <%#= link_to '#' do %>
+        <%= link_to '#' do %>
         <%= image_tag "icon-first", class: "room-img" %>
         <div class='room-info'>
           <div class='room-image'>
@@ -82,13 +82,13 @@
             チャットルーム名<br>を入力しよう
           </h3>
         </div>
-        <%# end %>
+        <% end %>
       </li>
-      <%# end %>
+      <% end %>
     </ul>
   </div>
 </div>
-<%= link_to(root_path, class: 'purchase-btn') do %>
+<%= link_to(new_room_path, class: 'purchase-btn') do %>
   <%= image_tag 'doctor.png' , size: '185x50' ,class: "purchase-btn-icon" %>
   <span class='purchase-btn-text'>ルーム作成</span>
 <% end %>

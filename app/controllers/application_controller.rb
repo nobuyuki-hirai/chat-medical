@@ -14,8 +14,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up,
                                       keys: [:last_name, :first_name, :hobby, :context, :job_id, :image, :user_id])
     devise_parameter_sanitizer.permit(:sign_in,
-                                        keys: [:last_name, :first_name, :hobby, :context, :job_id, :image, :user_id])
+                                      keys: [:last_name, :first_name, :hobby, :context, :job_id, :image, :user_id])
     devise_parameter_sanitizer.permit(:account_update,
-                                        keys: [:last_name, :first_name, :hobby, :context, :job_id, :image, :user_id])
+                                      keys: [:last_name, :first_name, :hobby, :context, :job_id, :image, :user_id])
   end
 end

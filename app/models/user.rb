@@ -19,7 +19,7 @@ class User < ApplicationRecord
   validates :job_id,                numericality: { other_than: 1, message: "can't be blank" }
   mount_uploader :image, ImageUploader
   validates :image, presence: true
-  
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :job, foreign_key: 'job_id'
 

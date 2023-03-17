@@ -11,8 +11,7 @@ class Job < ActiveHash::Base
     { id: 9, name: '訪問介護士' },
     { id: 10, name: '福祉用具相談員' },
     { id: 11, name: '義肢装具士' },
-    { id: 12, name: '通所スタッフ'},
-    { id: 13, name: 'その他' },
-    ]
-
+    { id: 12, name: '通所スタッフ' },
+    { id: 13, name: 'その他' }
+  ]
 end

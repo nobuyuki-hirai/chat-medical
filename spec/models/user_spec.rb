@@ -97,10 +97,9 @@ RSpec.describe User, type: :model do
         it 'contextが101文字以上だと登録できない' do
           @user.context = 'a' * 101
           @user.valid?
-          expect(@user.errors.full_messages).to include("Context is too long (maximum is 100 characters)")
+          expect(@user.errors.full_messages).to include('Context is too long (maximum is 100 characters)')
         end
       end
     end
   end
 end
-

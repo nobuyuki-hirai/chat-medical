@@ -1,0 +1,24 @@
+<%= render "shared/header" %>
+
+<div class='mypage-main'>
+  <div class='mypage-title'>Plofile
+    <img src=<%= @user.image %> class='icon_image'>
+  </div>
+  <h2 class='input-form'>名前</h2>
+    <div class='name-text'>
+      <%= @user.last_name %><%= @user.first_name %>
+    </div>
+  <h2 class='input-form'>職種</h2>
+    <div class='job-integer'>
+      <%= @user.job.name %>
+    </div>
+  <h2 class='input-form'>趣味</h2>
+    <div class='hobby-text'>
+      <%= @user.hobby %>
+    </div>
+  <h2 class='input-form'>自己紹介</h2>
+    <div class='context-text'>
+      <%= @user.context %>
+    </div>
+</div>
+

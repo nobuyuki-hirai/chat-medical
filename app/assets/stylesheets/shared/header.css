@@ -47,86 +47,45 @@
 
 .header-left {
   width: 100vw;
-  font-size: 18px;
+  font-size: 10px;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   flex-wrap: wrap;
-}
-
-.user-access {
-  list-style: none;
+  margin-right: 2vw;
 }
 
 .nav-lists {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-lists img {
+  margin-top: 1vh;
+}
+
+ul.user-btn {
+  padding: 0 3vw;
+  margin-bottom: 2vh;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
+  text-align: center;
+  background-color: #ccfbf1;
+  list-style: none;
+}
+
+.user-btn.mypage {
+  background-color: #ccfbf1;
   margin-right: 2vw;
 }
 
-.mypage-btn {
-  padding: 0 2vw;
+.user-btn.logout {
   background-color: #fb7185;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px black;
-  text-align: center;
 }
 
-.user-nickname {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: #000000;
-  font-weight: bold;
-  padding-top: 1vh;
-}
-
-.logout-btn {
-  padding: 0 2vw;
-  background-color: #fb7185;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px black;
-  text-align: center;
-}
-
-.logout {
-  text-decoration: none;
-  color: #333333;
-  padding-top: 1vh;
-}
-
-.login-btn {
-  background-color: #ccfbf1;
-  padding: 0 2vw;
+.user-btn.login {
   margin-right: 2vw;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px black;
-  text-align: center;
 }
 
-.login {
-  text-decoration: none;
-  line-height: 32px;
-  color: #000000;
-  filter: brightness(50%) hue-rotate(90deg);
-  padding-top: 1vh;
-}
-
-.sign-up {
-  text-decoration: none;
-  color: #000000;
-}
-
-.new-menber-btn {
-  background-color: #ccfbf1;
-  padding: 0 2vw;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px black;
-  text-align: center;
-}
-
-.new-menber {
-  text-decoration: none;
-  line-height: 32px;
-  color: #000000;
-  filter: brightness(50%) hue-rotate(90deg);
-  padding-top: 1vh;
-}

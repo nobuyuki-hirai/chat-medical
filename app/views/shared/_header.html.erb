@@ -10,31 +10,31 @@
       </div>
     </div>
     <div class='header-left'>
-      <ul class='user-access'>
-        <%# if user_signed_in? %>
+      <div class='user-access'>
+      <% if user_signed_in? %>
         <div class='nav-lists'>
-          <div class='mypage-btn'>
-            <%#= image_tag 'mypage-image.png', alt: 'mypage', class: 'mypage', width: 60, height: 60 %>
-            <li><%#= link_to , '#' class: "user-nickname" %></li>
-          </div>
-          <div class='logout-btn'>
-            <%#= image_tag 'logout-image.png', alt: 'logout', class: 'logout', width: 60, height: 60 %>
-            <li><%#= link_to 'ログアウト', '#', method: :delete, class: "logout" %></li>
-          </div>
+          <ul class='user-btn mypage'>
+            <li><%= link_to(image_tag(current_user.image.url,alt: "mypage",width: 40, height: 40),user_path(current_user.id) )%></li>
+            <li><%= link_to current_user.last_name, user_path(current_user.id), class: "user-name" %></li>
+          </ul>
+          <ul class='user-btn logout'>
+            <li><%= link_to(image_tag("logout-image.png",alt: "logout",width: 40, height: 40),destroy_user_session_path, method: :delete)%></li>
+            <li class='user_name'>ログアウト</li>
+          </ul>
         </div>
-        <%# else %>
+      <% else %>
         <div class='nav-lists'>
-          <div class='login-btn'>
-            <%= image_tag 'login-image.png', alt: 'login', class: 'login', width: 60, height: 60 %>
-            <li><%= link_to 'ログイン', '#', class: "login" %></li>
-          </div>
-          <div class='new-menber-btn'>
-            <%= image_tag 'new-name.png', alt: 'new-menber', class: 'new-menber', width: 60, height: 60 %>
-            <li><%= link_to '新規登録', '#', class: "sign-up" %></li>
-          </div>
+          <ul class='user-btn login'>
+            <li><%= link_to(image_tag("login-image.png",alt: "login", width: 40, height: 40), new_user_session_path )%></li>
+            <li class='user_name'>ログイン</li>
+          </ul>
+          <ul class='user-btn signup'>
+            <li><%= link_to(image_tag("new-name.png",alt: "new-member",width: 40, height: 40), new_user_registration_path )%></li>
+            <li class='user_name'>新規登録</li>
+          </ul>
         </div>
-        <%# end %>
-      </ul>
+      <% end %>
+      </div>
     </div>
   </div>
 </header>

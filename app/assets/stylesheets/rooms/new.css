@@ -1,0 +1,150 @@
+.room-main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.room-new__title {
+  height: 15vh;
+  font-size: 48px;
+  font-weight: 600;
+  text-align: center;
+
+  margin-bottom: 15vh;
+}
+
+.room-select {
+  height: 15vh;
+}
+
+.room-new__name {
+  height: 15vh;
+  font-size: 24px;
+  margin-bottom: 15vh;
+}
+
+.room-name {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 5vh;
+  background-color: #ccfbf1;
+  box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.9);
+}
+
+.room-text {
+  width: 30%;
+  height: 5vh;
+  margin: 0 auto;
+}
+
+.room-name, .room-text {
+  display: block;
+  text-align: center;
+}
+
+.invitation-user__form {
+  height: 15vh;
+}
+
+.select-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+select {
+  width: 30%;
+  height: 5vh;
+  margin: 0 auto;
+}
+
+.invitation-user {
+  width: 100vw;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 5vh;
+  background-color: #ccfbf1;
+  text-align: center;
+  box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.9);
+}
+
+.invitation .user-select {
+  display: block;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-button {
+  padding: 2vh 5vw;
+  background-color: #ccfbf1;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10vh 0;
+  font-size: 24px;
+  font-weight: 600;
+  box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.9);
+}
+
+/* カスタムセレクトボックスを作成する */
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 38px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* カスタムセレクトボックスのアローを作成する */
+.custom-select::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -3px;
+  border-top: 6px solid #666;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+}
+
+/* カスタムセレクトボックスのラベルを作成する */
+.custom-select-label {
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* カスタムオプションを作成する */
+.custom-select-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* カスタムオプションのアイテムを作成する */
+.custom-select-option {
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* カスタムオプションのアイテムのホバー時のスタイルを作成する */
+.custom-select-option:hover {
+  background-color: #eee;
+}

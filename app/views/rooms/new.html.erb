@@ -1,0 +1,24 @@
+<%= render "shared/header" %>
+
+<div class='room-main'>
+  <div class='room-new__title'>新規作成
+    <%= form_with(model: @room, local: true) do |f| %>
+    <div class="room-new__form">
+      <div class="room-new__form-name">
+        <%= f.label :name, 'グループ名' %>
+        <%= f.text_field :name, class: 'room-form' %>
+          <%= form_for(@room) do |f| %>
+            <div class="field">
+            </div>
+              <%= f.collection_select(:user_ids, User.all, :id, :full_user, { prompt: '招待するユーザーを選択して下さい' }, { class: "select-box", id: "room-user", multiple: true }) %>
+            <div class="actions">
+              <%= f.submit %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <%= f.submit '新規作成', class: "room_btn" %>
+    </div>
+    <% end %>
+  </div>
+</div>

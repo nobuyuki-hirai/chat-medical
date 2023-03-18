@@ -28,6 +28,10 @@ class User < ApplicationRecord
   end
 
   def full_name
+    "#{last_name}#{first_name}"
+  end
+
+  def full_user
     "#{last_name}#{first_name}(#{job[:name]})"
   end
 

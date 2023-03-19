@@ -16,10 +16,20 @@
   height: 15vh;
 }
 
-.room-new__name {
+.room-new {
+  width: 100vw;
+  text-align: center;
+
+}
+
+.room-new__top {
   height: 15vh;
   font-size: 24px;
   margin-bottom: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .room-name {
@@ -28,21 +38,36 @@
   margin-bottom: 5vh;
   background-color: #ccfbf1;
   box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.9);
+  flex: 1;
+}
+
+.image-form {
+  display: inline-block;
+  margin: 3vh 0;
+}
+
+.room-image, .indispensable {
+  display: block;
+}
+
+.indispensable {
+  font-size: 10px;
 }
 
 .room-text {
   width: 30%;
   height: 5vh;
   margin: 0 auto;
+  border-radius: 10px;
 }
 
-.room-name, .room-text {
+.room-name, .room-text, .room-image {
   display: block;
   text-align: center;
 }
 
-.invitation-user__form {
-  height: 15vh;
+.invitation-user__list {
+  border-radius: 10px;
 }
 
 .select-form {
@@ -76,6 +101,11 @@ select {
 .actions {
   display: flex;
   justify-content: center;
+}
+
+.selected-user-list {
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .submit-button {

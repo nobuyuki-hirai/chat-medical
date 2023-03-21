@@ -202,22 +202,29 @@ span {
 
 .room-img-content {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .room-img {
-  width: 22vh;
-  height: 22vh;
+  width: 25vh;
+  height: 25vh;
+  border-radius: 100px;
+  box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.5);
 }
 
 
 .room-info {
-  background-color: #FFF;
   color: black;
   padding: 1vw;
 }
 
-.room-name {
-  font-size: 2.5vh;
+.room-info__name {
+  font-size: 3vh;
+  text-align: center;
+  box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.5);
+  background-color: #cffafe;
 }
 
 .room-image {

@@ -96,6 +96,7 @@ select {
 .invitation .user-select {
   display: block;
   text-align: center;
+  height: 30vh;
 }
 
 .actions {
@@ -119,62 +120,4 @@ select {
   font-size: 24px;
   font-weight: 600;
   box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.9);
-}
-
-/* カスタムセレクトボックスを作成する */
-.custom-select {
-  position: relative;
-  display: inline-block;
-  width: 250px;
-  height: 38px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-/* カスタムセレクトボックスのアローを作成する */
-.custom-select::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  margin-top: -3px;
-  border-top: 6px solid #666;
-  border-right: 6px solid transparent;
-  border-left: 6px solid transparent;
-}
-
-/* カスタムセレクトボックスのラベルを作成する */
-.custom-select-label {
-  display: block;
-  padding: 10px;
-  font-size: 16px;
-  color: #333;
-}
-
-/* カスタムオプションを作成する */
-.custom-select-options {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* カスタムオプションのアイテムを作成する */
-.custom-select-option {
-  display: block;
-  padding: 10px;
-  font-size: 16px;
-  color: #333;
-  cursor: pointer;
-}
-
-/* カスタムオプションのアイテムのホバー時のスタイルを作成する */
-.custom-select-option:hover {
-  background-color: #eee;
 }

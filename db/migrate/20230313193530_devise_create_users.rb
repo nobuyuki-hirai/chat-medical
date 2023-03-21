@@ -11,7 +11,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.integer  :job_id,             null: false
       t.string   :hobby,              null: false, default: ""
       t.string   :context,            null: false, default: ""
-
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

@@ -15,7 +15,7 @@ class User < ApplicationRecord
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/
   validates :password,              presence: true, length: { minimum: 6 }, format: { with: VALID_PASSWORD_REGEX }
   validates :hobby,                 presence: true
-  validates :context,               presence: true, length: { maximum: 100 }
+  validates :context,               presence: true, length: { maximum: 300 }
   validates :job_id,                numericality: { other_than: 1, message: "can't be blank" }
   mount_uploader :image, ImageUploader
   validates :image, presence: true

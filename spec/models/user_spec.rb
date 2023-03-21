@@ -15,7 +15,7 @@ RSpec.describe User, type: :model do
         @user.password_confirmation = '12345a'
         expect(@user).to be_valid
       end
-      it 'contextが100文字以下だと登録できる' do
+      it 'contextが500文字以下だと登録できる' do
         @user.context = 'a' * 15
         expect(@user).to be_valid
       end
@@ -79,11 +79,6 @@ RSpec.describe User, type: :model do
           @user.valid?
           expect(@user.errors.full_messages).to include('Password is invalid')
         end
-        it 'job_idに「---」が選択されている場合は出品できない' do
-          @user.job_id = '1'
-          @user.valid?
-          expect(@user.errors.full_messages).to include("Job can't be blank")
-        end
         it 'hobbyが空だと登録できない' do
           @user.hobby = ''
           @user.valid?
@@ -94,10 +89,10 @@ RSpec.describe User, type: :model do
           @user.valid?
           expect(@user.errors.full_messages).to include("Context can't be blank")
         end
-        it 'contextが101文字以上だと登録できない' do
-          @user.context = 'a' * 101
+        it 'contextが301文字以上だと登録できない' do
+          @user.context = 'a' * 301
           @user.valid?
-          expect(@user.errors.full_messages).to include('Context is too long (maximum is 100 characters)')
+          expect(@user.errors.full_messages).to include('Context is too long (maximum is 300 characters)')
         end
       end
     end

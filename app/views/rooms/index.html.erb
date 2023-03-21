@@ -57,21 +57,21 @@
         </button>
       </form>
     <ul class='room-lists'>
-    <% @room_lists.each do |room| %>
+    <% @rooms.each do |room| %>
       <li class='list'>
         <%= link_to '#' do %>
           <div class='room-img-content'>
-            <%= image_tag '#', class: "room-img" %>
+            <%= image_tag room.image.url, class: "room-img" %>
           </div>
           <div class='room-info'>
-            <h3 class='room-name'>
-              <%= room.title %>
+            <h3 class='room-info__name'>
+              <%= room.name %>
             </h3>
           </div>
         <% end %>
       </li>
     <% end %>
-      <% if @room_lists.length == 0 %>
+      <% if @rooms.length == 0 %>
       <li class='list'>
         <%= link_to '#' do %>
         <%= image_tag "icon-first", class: "room-img" %>

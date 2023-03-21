@@ -5,6 +5,7 @@ window.addEventListener('load', function(){
 
   selectList.addEventListener('change', () => {
     const selectedValue = selectList.value;
+    const selectedText = selectList.options[selectList.selectedIndex].text;
 
     if (selectedOptions.has(selectedValue)) {
       alert('既に選択されています');
@@ -12,7 +13,7 @@ window.addEventListener('load', function(){
     }
 
     const selectedOption = document.createElement('div');
-    selectedOption.innerText = selectedValue;
+    selectedOption.innerText = selectedText;
     selectedList.appendChild(selectedOption);
 
     selectedOption.addEventListener('click', () => {

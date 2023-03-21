@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :rooms, through: :user_rooms, dependent: :destroy
-  has_many :user_rooms, dependent: :destroy
+  has_many :room_users, dependent: :destroy
+  has_many :rooms, through: :room_users
   has_many :messages
   has_many :relationships
   has_many :events
@@ -16,9 +16,10 @@ class User < ApplicationRecord
   validates :password,              presence: true, length: { minimum: 6 }, format: { with: VALID_PASSWORD_REGEX }
   validates :hobby,                 presence: true
   validates :context,               presence: true, length: { maximum: 300 }
-  validates :job_id,                numericality: { other_than: 1, message: "can't be blank" }
+  validates :job_id,                presence: true, numericality: { other_than: 1, message: "can't be blank" }
   mount_uploader :image, ImageUploader
   validates :image, presence: true
+  validates :full_user, presence: true
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :job, foreign_key: 'job_id'

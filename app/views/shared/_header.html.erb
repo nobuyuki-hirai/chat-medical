@@ -15,7 +15,7 @@
         <div class='nav-lists'>
           <ul class='user-btn mypage'>
             <li><%= link_to(image_tag(current_user.image.url,alt: "mypage",width: 40, height: 40),user_path(current_user.id) )%></li>
-            <li><%= link_to current_user.last_name, user_path(current_user.id), class: "user-name" %></li>
+            <li><%= link_to current_user.full_name, user_path(current_user.id), class: "user-name" %></li>
           </ul>
           <ul class='user-btn logout'>
             <li><%= link_to(image_tag("logout-image.png",alt: "logout",width: 40, height: 40),destroy_user_session_path, method: :delete)%></li>

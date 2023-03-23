@@ -1,0 +1,118 @@
+.room-main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.room-new__title {
+  height: 15vh;
+  font-size: 48px;
+  font-weight: 600;
+  text-align: center;
+
+  margin-bottom: 15vh;
+}
+
+.room-select {
+  height: 15vh;
+}
+
+.room-new {
+  width: 100vw;
+  text-align: center;
+
+}
+
+.room-new__top {
+  height: 15vh;
+  font-size: 24px;
+  margin-bottom: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.room-name {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 5vh;
+  background-color: #ccfbf1;
+  box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.9);
+  flex: 1;
+}
+
+.image-form {
+  display: inline-block;
+  margin: 3vh 0;
+}
+
+.room-image, .indispensable {
+  display: block;
+}
+
+.room-text {
+  width: 30%;
+  height: 5vh;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.room-name, .room-text, .room-image {
+  display: block;
+  text-align: center;
+}
+
+.invitation-user__list {
+  border-radius: 10px;
+}
+
+.select-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+select {
+  width: 30%;
+  height: 15vh;
+  margin: 0 auto;
+}
+
+.invitation-user {
+  width: 100vw;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 5vh;
+  background-color: #ccfbf1;
+  text-align: center;
+  box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.9);
+}
+
+.check_box {
+  display: flex;
+}
+
+.invitation .user-select {
+  display: block;
+  text-align: center;
+  height: 30vh;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-button {
+  padding: 2vh 5vw;
+  background-color: #ccfbf1;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10vh 0;
+  font-size: 24px;
+  font-weight: 600;
+  box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.9);
+}

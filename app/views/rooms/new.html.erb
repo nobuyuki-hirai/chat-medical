@@ -1,0 +1,31 @@
+<%= render "shared/header" %>
+
+<div class='room-main'>
+  <div class='room-new__title'>チャットルーム新規作成
+  </div>
+  <%= form_with model: @room, local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <div class='room-new'>
+      <%= f.label :name, 'チャットルーム名', class: 'room-name' %>
+      <%= f.text_field :name, class: 'room-text' %>
+      <div class='image-form'>
+        <%= f.file_field :image, id:"image", accept: "image/*", class: 'room-image' %>
+      </div>
+    </div>
+
+    <div class='invitation-user__form'>
+      <div class='select-form'>
+      <%= f.label "user_ids[]", "招待するユーザー", class: "invitation-user" %>
+      <%= f.collection_check_boxes(:user_ids, User.where.not(id: current_user.id), :id, :full_user, {include_hidden: false}, {class: 'invitation-user__list', multiple: true}) do |f| %>
+        <div class='check_box'>
+          <%= f.check_box %>
+          <%= f.text %>
+        </div>
+      <% end %>
+      <%= hidden_field_tag 'room[user_ids][]', current_user.id %>
+      </div>
+    <div class="actions">
+      <%= f.submit 'ルーム作成', class: 'submit-button' %>
+    </div>
+  <% end %>
+</div>

@@ -1,8 +1,8 @@
 class RoomsController < ApplicationController
-  before_action :authenticate_user!, only: :new
+  before_action :authenticate_user!, only: [:new]
 
   def index
-    @rooms = Room.all
+    @rooms = current_user.rooms.includes(:users)
   end
 
   def new
@@ -11,6 +11,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
+
     if @room.save
       redirect_to root_path
     else
@@ -22,5 +23,5 @@ class RoomsController < ApplicationController
 
   def room_params
     params.require(:room).permit(:name, :image, user_ids: [])
-  end
+  end  
 end

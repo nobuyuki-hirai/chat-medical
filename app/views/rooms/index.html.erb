@@ -61,7 +61,11 @@
       <li class='list'>
         <%= link_to '#' do %>
           <div class='room-img-content'>
-            <%= image_tag room.image.url, class: "room-img" %>
+            <% if room.image? %>
+              <%= image_tag room.image.url, class: "room-img" %>
+            <% else %>
+              <%= image_tag "icon-first", class: "room-img" %>
+            <% end %>
           </div>
           <div class='room-info'>
             <h3 class='room-info__name'>
@@ -74,11 +78,11 @@
       <% if @rooms.length == 0 %>
       <li class='list'>
         <%= link_to '#' do %>
-        <%= image_tag "icon-first", class: "room-img" %>
+        <div class='room-img-content'>
+          <%= image_tag "icon-first", class: "room-img" %>
+        </div>
         <div class='room-info'>
-          <div class='room-image'>
-          </div>
-          <h3 class='room-name'>
+          <h3 class='room-info__name'>
             チャットルーム名<br>を入力しよう
           </h3>
         </div>

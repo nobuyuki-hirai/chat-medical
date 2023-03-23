@@ -50,10 +50,6 @@
   display: block;
 }
 
-.indispensable {
-  font-size: 10px;
-}
-
 .room-text {
   width: 30%;
   height: 5vh;
@@ -79,7 +75,7 @@
 
 select {
   width: 30%;
-  height: 5vh;
+  height: 15vh;
   margin: 0 auto;
 }
 
@@ -93,6 +89,10 @@ select {
   box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.9);
 }
 
+.check_box {
+  display: flex;
+}
+
 .invitation .user-select {
   display: block;
   text-align: center;
@@ -102,11 +102,6 @@ select {
 .actions {
   display: flex;
   justify-content: center;
-}
-
-.selected-user-list {
-  font-size: 18px;
-  font-weight: 600;
 }
 
 .submit-button {

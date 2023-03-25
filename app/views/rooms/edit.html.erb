@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <div class='room-main'>
-  <div class='room-new__title'>チャットルーム新規作成
+  <div class='room-new__title'>チャットルーム編集
   </div>
   <%= form_with model: @room, local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>

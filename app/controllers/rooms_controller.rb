@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :show]
 
   def index
     @rooms = current_user.rooms.includes(:users)
@@ -21,6 +21,7 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+    @users = @room.users
   end
 
   private

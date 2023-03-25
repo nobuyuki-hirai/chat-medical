@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_21_113853) do
+ActiveRecord::Schema.define(version: 2023_03_25_142453) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2023_03_21_113853) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
+    t.bigint "creator_id"
+    t.index ["creator_id"], name: "index_rooms_on_creator_id"
     t.index ["name"], name: "index_rooms_on_name", unique: true
   end
 
@@ -71,4 +73,5 @@ ActiveRecord::Schema.define(version: 2023_03_21_113853) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "room_users", "rooms"
   add_foreign_key "room_users", "users"
+  add_foreign_key "rooms", "users", column: "creator_id"
 end

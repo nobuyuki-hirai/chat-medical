@@ -2,7 +2,11 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new, :show]
 
   def index
-    @room = current_user.rooms.includes(:users)
+    if user_signed_in?
+      @room = current_user.rooms.includes(:users)
+    else
+      redirect_to new_user_registration_path
+    end
   end
 
   def new

@@ -4,9 +4,9 @@ class RoomsController < ApplicationController
 
   def index
     @rooms = if user_signed_in?
-                current_user.rooms.includes(:users)
+               current_user.rooms.includes(:users)
              else
-                Room.none
+               Room.none
              end
   end
 

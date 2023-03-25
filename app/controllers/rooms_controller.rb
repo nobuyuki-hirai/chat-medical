@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :show]
-  before_action :set_rooms, only: [:show, :edit, :update]
+  before_action :set_rooms, only: [:show, :edit, :update, :destroy]
 
   def index
     @rooms = if user_signed_in?
@@ -16,7 +16,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
-
+    @room.creator = current_user
     if @room.save
       redirect_to root_path
     else
@@ -36,6 +36,14 @@ class RoomsController < ApplicationController
       redirect_to room_path(@room)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @room.destroy
+      redirect_to root_path
+    else
+      render :show
     end
   end
 

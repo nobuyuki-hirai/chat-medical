@@ -54,3 +54,24 @@
   text-align: center;
   padding: 0 10vw 10vh;
 }
+
+.user-edit__form {
+  font-weight: 600;
+  margin-bottom: 5vh;
+  padding: 2.5vh 2.5vw;
+  border-radius: 30px;
+  background-color: #d9f99d;
+  box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.9);
+}
+
+.user-edit__form:hover {
+  background-color:  #ccfbf1;
+  box-shadow: 15px 15px 15px 0 rgba(100,100,100,0.9);
+  transform: translateY(-2px);
+}
+
+.user-edit {
+  text-decoration: none;
+  color: #000000;
+  font-size: 32px;
+}

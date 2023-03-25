@@ -51,7 +51,8 @@
 }
 
 .chat-event,
-.chat-edit {
+.chat-edit,
+.chat-destroy {
   display: inline-block;
   padding: 10px 20px;
   margin-right: 2vw;
@@ -79,12 +80,23 @@
   transform: translateY(-2px);
 }
 
+.chat-destroy:hover {
+  background-color:  #ccfbf1;
+  box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
+  transform: translateY(-2px);
+}
+
 .edit-name {
   text-decoration: none;
   color: #000000;
 }
 
 .event-name {
+  text-decoration: none;
+  color: #000000;
+}
+
+.destroy-name {
   text-decoration: none;
   color: #000000;
 }

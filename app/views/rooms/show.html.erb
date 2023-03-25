@@ -19,9 +19,14 @@
         〜<%= @room.name %>〜
       </div>
       <div class='chat-button'>
+        <% if @room.creator == current_user %>
+        <div class='chat-destroy'>
+          <%= link_to "削除", room_path(@room.id), method: :delete, class: "destroy-name" %>
+        </div>
         <div class="chat-edit" style="float: left;">
           <%= link_to "編集", edit_room_path(@room.id), class: "edit-name"%>
         </div>
+        <% end %>
         <div class="chat-event" style="float: right;">
           <%= link_to "イベント", "#", class: "event-name" %>
         </div>

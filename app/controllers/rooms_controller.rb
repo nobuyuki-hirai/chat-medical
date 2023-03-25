@@ -1,9 +1,13 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :show]
-  before_action :set_rooms, only: [:show, :edit]
+  before_action :set_rooms, only: [:show, :edit, :update]
 
   def index
-    @rooms = current_user.rooms.includes(:users)
+    @rooms = if user_signed_in?
+                current_user.rooms.includes(:users)
+             else
+                Room.none
+             end
   end
 
   def new
@@ -25,6 +29,10 @@ class RoomsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    room.update(room_params)
   end
 
   private

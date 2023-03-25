@@ -56,25 +56,42 @@
           <%= image_tag "search.png", class:"search-icon" %>
         </button>
       </form>
+    <% if user_signed_in? %>
+    <% if @rooms.any? %>
     <ul class='room-lists'>
-    <% @rooms.each do |room| %>
+      <% @rooms.each do |room| %>
+        <li class='list'>
+          <%= link_to room_path(room.id) do %>
+            <div class='room-img-content'>
+              <% if room.image? %>
+                  <%= image_tag room.image.url, class: "room-img" %>
+              <% else %>
+                <%= image_tag "icon-first", class: "room-img" %>
+              <% end %>
+            </div>
+            <div class='room-info'>
+              <h3 class='room-info__name'>
+                <%= room.name %>
+              </h3>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+      <% else %>
       <li class='list'>
-        <%= link_to room_path(room.id) do %>
-          <div class='room-img-content'>
-            <% if room.image? %>
-                <%= image_tag room.image.url, class: "room-img" %>
-            <% else %>
-              <%= image_tag "icon-first", class: "room-img" %>
-            <% end %>
-          </div>
-          <div class='room-info'>
-            <h3 class='room-info__name'>
-              <%= room.name %>
-            </h3>
-          </div>
+        <%= link_to '#' do %>
+        <div class='room-img-content'>
+          <%= image_tag "icon-first", class: "room-img" %>
+        </div>
+        <div class='room-info'>
+          <h3 class='room-info__name'>
+            チャットルーム名<br>を入力しよう
+          </h3>
+        </div>
         <% end %>
       </li>
-    <% end %>
+      <% end %>
+    <% else %>
       <% if @rooms.length == 0 %>
       <li class='list'>
         <%= link_to '#' do %>
@@ -90,6 +107,7 @@
       </li>
       <% end %>
     </ul>
+    <% end %>
   </div>
 </div>
 <%= link_to(new_room_path, class: 'purchase-btn') do %>

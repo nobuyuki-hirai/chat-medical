@@ -3,7 +3,7 @@ class Room < ApplicationRecord
   has_many :users, through: :room_users, validate: false
   has_many :messages
   has_one  :events
-  belongs_to :creator, class_name: "User"
+  belongs_to :creator, class_name: 'User'
 
   validates :name, presence: true
 

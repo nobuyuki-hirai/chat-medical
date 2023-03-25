@@ -116,3 +116,9 @@ select {
   font-weight: 600;
   box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.9);
 }
+
+.submit-button:hover {
+  background-color:  #ccfbf1;
+  box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
+  transform: translateY(-2px);
+}

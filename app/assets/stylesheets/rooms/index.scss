@@ -218,6 +218,12 @@ span {
   box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.5);
 }
 
+.room-img:hover {
+  background-color:  #ffffff;
+  box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
+  transform: translateY(-2px);
+}
+
 
 .room-info {
   color: black;

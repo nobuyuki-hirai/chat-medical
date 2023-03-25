@@ -45,6 +45,12 @@
   margin-right: 1vw;
 }
 
+.medical-icon:hover {
+  background-color:  #ccfbf1;
+  box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
+  transform: translateY(-2px);
+}
+
 .header-left {
   width: 100vw;
   font-size: 10px;
@@ -76,16 +82,39 @@ ul.user-btn {
   list-style: none;
 }
 
+ul.user-btn:hover {
+  background-color:  #ccfbf1;
+  box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
+  transform: translateY(-2px);
+}
+
 .user-btn.mypage {
   background-color: #ccfbf1;
   margin-right: 2vw;
+}
+
+.user-btn.mypage:hover {
+  background-color:  #ccfbf1;
+  box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
+  transform: translateY(-2px);
 }
 
 .user-btn.logout {
   background-color: #fb7185;
 }
 
+.user-btn.logout:hover {
+  background-color:  #fb7185;
+  box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
+  transform: translateY(-2px);
+}
+
 .user-btn.login {
   margin-right: 2vw;
 }
 
+.user-btn.login:hover {
+  background-color:  #ccfbf1;
+  box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
+  transform: translateY(-2px);
+}

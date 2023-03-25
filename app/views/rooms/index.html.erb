@@ -57,7 +57,7 @@
         </button>
       </form>
     <ul class='room-lists'>
-    <% @rooms.each do |room| %>
+    <% @room.each do |room| %>
       <li class='list'>
         <%= link_to room_path(room.id) do %>
           <div class='room-img-content'>
@@ -75,7 +75,7 @@
         <% end %>
       </li>
     <% end %>
-      <% if @rooms.length == 0 %>
+      <% if @room.length == 0 %>
       <li class='list'>
         <%= link_to '#' do %>
         <div class='room-img-content'>

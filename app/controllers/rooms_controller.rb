@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :show]
 
   def index
-    @rooms = current_user.rooms.includes(:users)
+    @room = current_user.rooms.includes(:users)
   end
 
   def new

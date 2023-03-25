@@ -78,6 +78,7 @@
         </li>
       <% end %>
       <% else %>
+    <% @room.each do |room| %>
       <li class='list'>
         <%= link_to '#' do %>
         <div class='room-img-content'>
@@ -93,6 +94,8 @@
       <% end %>
     <% else %>
       <% if @rooms.length == 0 %>
+    <% end %>
+      <% if @room.length == 0 %>
       <li class='list'>
         <%= link_to '#' do %>
         <div class='room-img-content'>

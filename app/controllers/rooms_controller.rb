@@ -8,11 +8,6 @@ class RoomsController < ApplicationController
              else
                Room.none
              end
-    if user_signed_in?
-      @room = current_user.rooms.includes(:users)
-    else
-      redirect_to new_user_registration_path
-    end
   end
 
   def new

@@ -50,7 +50,8 @@
   font-weight: 500;
 }
 
-.chat-event {
+.chat-event,
+.chat-edit {
   display: inline-block;
   padding: 10px 20px;
   margin-right: 2vw;
@@ -69,6 +70,18 @@
   background-color:  #ccfbf1;
   box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
   transform: translateY(-2px);
+}
+
+
+.chat-edit:hover {
+  background-color:  #ccfbf1;
+  box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
+  transform: translateY(-2px);
+}
+
+.edit-name {
+  text-decoration: none;
+  color: #000000;
 }
 
 .event-name {

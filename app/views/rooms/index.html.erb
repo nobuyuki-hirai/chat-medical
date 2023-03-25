@@ -59,10 +59,10 @@
     <ul class='room-lists'>
     <% @rooms.each do |room| %>
       <li class='list'>
-        <%= link_to '#' do %>
+        <%= link_to room_path(room.id) do %>
           <div class='room-img-content'>
             <% if room.image? %>
-              <%= image_tag room.image.url, class: "room-img" %>
+                <%= image_tag room.image.url, class: "room-img" %>
             <% else %>
               <%= image_tag "icon-first", class: "room-img" %>
             <% end %>

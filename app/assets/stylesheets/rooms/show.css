@@ -1,0 +1,89 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.side-ber {
+  width: 20vw;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.room-user__list {
+  display: block;
+  margin: 5vh 0;
+}
+
+.user-list {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+  background-color: #d9f99d;
+  box-shadow: 7px 7px 7px 0 rgba(100,100,100,0.5);
+  transition: all 0.3s ease;
+}
+
+.user-list:hover {
+  background-color:  #ccfbf1;
+  box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
+  transform: translateY(-2px);
+}
+
+.main-chat {
+  width: calc(100vw - 20vw);
+}
+
+.chat-header {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  background-color: #bae6fd;
+  box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
+}
+
+.chat-title {
+  margin-left: 2vw;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.chat-event {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 2vw;
+  background-color: #d9f99d;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 7px 7px 7px 0 rgba(100,100,100,0.5);
+  transition: all 0.3s ease;
+}
+
+.chat-event:hover {
+  background-color:  #ccfbf1;
+  box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
+  transform: translateY(-2px);
+}
+
+.event-name {
+  text-decoration: none;
+  color: #000000;
+}
+
+
+.chat-messages {
+  height: calc(100vh - 15vh);
+  background-color: #bae6fd;
+}
+
+.chat-form {
+  height: 15vh;
+  border-radius: 0 0 10px 10px;
+  background-color: #bae6fd;
+}

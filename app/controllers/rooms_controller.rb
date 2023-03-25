@@ -32,7 +32,11 @@ class RoomsController < ApplicationController
   end
 
   def update
-    room.update(room_params)
+    if @room.update(room_params)
+      redirect_to room_path(@room)
+    else
+      render :edit
+    end
   end
 
   private

@@ -1,6 +1,30 @@
 <%= render "shared/header" %>
-<div class='chat-main'>
-  <div class='chat_menber'>
-    
+<div class='wrapper'>
+  <div class='side-ber'>
+    <div class="side-ber__header">
+      <h3 class='side-ber__title'>参加メンバー
+      </h3>
+    </div>
+    <div class="side-ber__footer">
+      <% @users.each do |user| %>
+        <div class="room-user__list">
+          <%= link_to user.full_user, user_path(user), class: "user-list" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="main-chat">
+    <div class="chat-header">
+      <div class="chat-title">
+        〜<%= @room.name %>〜
+      </div>
+      <div class="chat-event">
+        <%= link_to "イベント", "#", class: "event-name" %>
+      </div>
+    </div>
+    <div class='chat-messages'>
+    </div>
+    <div class='chat-form'>
+    </div>
   </div>
 </div>

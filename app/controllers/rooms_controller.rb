@@ -49,12 +49,6 @@ class RoomsController < ApplicationController
     end
   end
 
-  def search
-    index
-    render 'index'
-  end
-  
-
   private
 
   def room_params

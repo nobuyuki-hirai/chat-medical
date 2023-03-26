@@ -49,53 +49,55 @@
 
   <div class='caht-main'>
     <div class='room-contents'>
-    <h2 class='title'>チャットルーム一覧表</h2>
-    <%= search_form_for @q, url: search_rooms_path, method: :get do |f| %>
-      <div class="input-wrapper">
-        <%= f.search_field :name_cont, class: "input-box", placeholder: "チャットルームを検索" %>
-        <%= f.submit "検索", class: "search-button" %>
-      </div>
-    <% end %>
-
-<ul class='room-lists'>
-  <% if @rooms.any? %>
-    <% @rooms.each do |room| %>
-      <li class='list'>
-        <%= link_to room_path(room.id) do %>
-          <div class='room-img-content'>
-            <%= image_tag room.image? ? room.image.url : "icon-first", class: "room-img" %>
-          </div>
-          <div class='room-info'>
-            <% if room.creator == current_user %>
-              <h3 class='room-info__name'>
-                <%= room.name %>
-              </h3>
-            <% else %>
-              <h3 class='room-info__creator'>
-                <%= room.name %>
-              </h3>
-            <% end %>
-          </div>
-        <% end %>
-      </li>
-    <% end %>
-  <% else %>
-    <% content = user_signed_in? ? 'チャットルーム名を入力しよう' : 'ログインして下さい' %>
-    <li class='list'>
-      <%= link_to '#' do %>
-        <div class='room-img-content'>
-          <%= image_tag "icon-first", class: "room-img" %>
-        </div>
-        <div class='room-info'>
-          <h3 class='room-info__name'>
-            <%= content %>
-          </h3>
+      <h2 class='title'>チャットルーム一覧表</h2>
+      <%= search_form_for @q, url: root_path, method: :get do |f| %>
+        <div class="input-wrapper">
+          <%= f.search_field :name_cont, class: "input-box", placeholder: "チャットルームを検索" %>
+          <%= f.submit "検索", class: "search-button" %>
         </div>
       <% end %>
-    </li>
-  <% end %>
-</ul>
+    </div>
 
+    <ul class='room-lists'>
+      <% if @rooms.any? %>
+        <% @rooms.each do |room| %>
+          <li class='list'>
+            <%= link_to room_path(room.id) do %>
+              <div class='room-img-content'>
+                <%= image_tag room.image? ? room.image.url : "icon-first", class: "room-img" %>
+              </div>
+              <div class='room-info'>
+                <% if room.creator == current_user %>
+                  <h3 class='room-info__name'>
+                    <%= room.name %>
+                  </h3>
+                <% else %>
+                  <h3 class='room-info__creator'>
+                    <%= room.name %>
+                  </h3>
+                <% end %>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      <% else %>
+        <% content = user_signed_in? ? 'チャットルーム名を入力しよう' : 'ログインして下さい' %>
+        <li class='list'>
+          <%= link_to '#' do %>
+            <div class='room-img-content'>
+              <%= image_tag "icon-first", class: "room-img" %>
+            </div>
+            <div class='room-info'>
+              <h3 class='room-info__name'>
+                <%= content %>
+              </h3>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
 <%= link_to(new_room_path, class: 'purchase-btn') do %>
   <%= image_tag 'doctor.png' , size: '185x50' ,class: "purchase-btn-icon" %>

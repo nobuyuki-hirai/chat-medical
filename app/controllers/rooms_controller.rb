@@ -8,6 +8,8 @@ class RoomsController < ApplicationController
              else
                Room.none
              end
+    @q = Room.ransack(params[:q])
+    @rooms = @q.result(distinct: true)
   end
 
   def new
@@ -46,6 +48,12 @@ class RoomsController < ApplicationController
       render :show
     end
   end
+
+  def search
+    index
+    render 'index'
+  end
+  
 
   private
 

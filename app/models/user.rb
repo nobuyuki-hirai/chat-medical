@@ -16,7 +16,7 @@ class User < ApplicationRecord
   validates :password,              presence: true, length: { minimum: 6 }, format: { with: VALID_PASSWORD_REGEX }
   validates :hobby,                 presence: true
   validates :context,               presence: true, length: { maximum: 300 }
-  validates :job_id,                presence: true, numericality: { other_than: 1, message: "can't be blank" }
+  validates :job_id,                presence: true, numericality: { other_than: 1, message: "を選択してください" }
   mount_uploader :image, ImageUploader
   validates :image, presence: true
   validates :full_user, presence: true

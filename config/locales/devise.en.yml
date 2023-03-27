@@ -70,6 +70,7 @@ ja:
       user:
         unauthenticated: '認証されていないユーザーです。'
         not_found_in_database: 'メールアドレスまたはパスワードが間違っています。'
+        invalid: 'メールアドレスまたはパスワードが間違っています。'
     sessions:
       user:
         signed_out: 'ログアウトしました。'

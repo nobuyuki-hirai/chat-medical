@@ -7,7 +7,6 @@ class MessagesController < ApplicationController
       redirect_to room_path(@room.id)
     else
       @messages = @room.messages.includes(:user)
-      render :show
     end
   end
 

@@ -89,20 +89,25 @@
   background-color: #bae6fd;
 }
 
+span.message-date {
+  display: flex;
+  justify-content: center;
+  color: #000000;
+  background-color: #bae6fd;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
 .upper-message {
   display: flex;
   margin: 1vh 0 0 1vw;
 }
 
-.my-image {
-  width: 5vw;
-  height: auto;
-  text-align: right;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 3px 3px 3px 0 rgba(50,50,50,0.5);
-}
-
+.my-image,
 .your-image {
   width: 5vw;
   height: auto;
@@ -112,22 +117,7 @@
   box-shadow: 3px 3px 3px 0 rgba(50,50,50,0.5);
 }
 
-.my-message__user {
-  margin: 0.5vh 0 0 0.5vw;
-}
-
-.your-message__user {
-  margin: 0.5vh 0 0 0.5vw;
-}
-
-.my-full__name {
-  font-size: 15px;
-  color: #000000;
-  border-radius: 6px;
-  background-color: #d9f99d;
-  box-shadow: 3px 3px 3px 0 rgba(50,50,50,0.5);
-}
-
+.my-full__name,
 .your-full__name {
   font-size: 15px;
   color: #000000;
@@ -136,49 +126,72 @@
   box-shadow: 3px 3px 3px 0 rgba(50,50,50,0.5);
 }
 
-.lower-message {
+.my-lower__message,
+.your-lower__message {
   display: flex;
-  margin-left: 1vw;
+  margin: 0.5vh 1vw;
 }
 
-.my-message__content {
-  width: 35vw;
-  background-color: #d9f99d;
+.my-lower__message {
+  float: right;
+  margin-left: auto;
+  margin-right: 2vw;
+}
+
+.my-message__content,
+.your-message__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.your-message__content {
+  align-items: flex-start;
+}
+
+.my-message__image,
+.your-message__image {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.my-content__text,
+.your-content__text {
+  max-width: 45vw;
+  color: #000000;
+  text-align: right;
+  padding: 2px 4px;
   border-radius: 15px;
-  box-shadow: 3px 3px 3px 0 rgba(50,50,50,0.5);
-  margin-bottom: 2vh;
-}
-
-.your-message__content{
-  width: 35vw;
   background-color: #ffffff;
-  border-radius: 15px;
   box-shadow: 3px 3px 3px 0 rgba(50,50,50,0.5);
-  margin-bottom: 2vh;
 }
 
-.my-content {
-  color: #000000;
-  margin: 0 1vw;
-  padding: 2px;
+.my-content__text {
+  background-color: #d9f99d;
+  text-align: left;
 }
 
-.your-content {
-  color: #000000;
-  margin: 0 1vw;
-  padding: 2px;
+.my-content__image,
+.your-content__image {
+  width: 20vw;
+  height: 20vh;
+  margin-top: 1vh;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 3px 3px 3px 0 rgba(50,50,50,0.5);
 }
 
-.my-date {
-  color: #000000;
-  font-size: 5px;
-  margin-left: 0.5vw;
-}
-
-.your-date {
+.my-content__date,
+.your-content__date {
   color: #000000;
   font-size: 5px;
-  margin-left: 0.5vw;
+  margin: 0.5vw;
+}
+
+.my-content__date {
+  float: left;
+  clear: both;
 }
 
 .chat-form {
@@ -200,36 +213,38 @@
 }
 
 .chat-image {
-  margin-left: 3vw;
+  display: none;
+}
+
+.choose-file {
+  margin-left: 1vw;
   color: #000000;
-  font-size: 3px;
-  border: none;
-  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 2vh 2vw;
   cursor: pointer;
+  background-color: #ffffff;
+  border-radius: 5px;
   box-shadow: 7px 7px 7px 0 rgba(100,100,100,0.5);
   transition: all 0.3s ease;
 }
 
-.chat-image:hover {
-  box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
-  transform: translateY(-2px);
-}
-
 .form-submit {
-  background-color: #d9f99d;
-  margin: 0 1vw;
-  padding: 5px 2vw;
+  margin-left: 10vw;
+  padding: 1.5vh 2vw;
   color: #000000;
   font-size: 16px;
   font-weight: bold;
   border: none;
   border-radius: 5px;
+  background-color: #ffffff;
   cursor: pointer;
   box-shadow: 7px 7px 7px 0 rgba(100,100,100,0.5);
   transition: all 0.3s ease;
 }
 
-.form-submit:hover {
+.form-submit:hover,
+.choose-file:hover {
   background-color:  #d9f99d;
   box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
   transform: translateY(-2px);

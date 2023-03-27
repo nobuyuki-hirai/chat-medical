@@ -33,32 +33,65 @@
     </div>
 
     <div class='chat-messages'>
+      <% current_date = nil %>
       <% @messages.each do |message| %>
+        <% if message.created_at.in_time_zone.strftime('%m/%d') != current_date %>
+          <% current_date = message.created_at.in_time_zone.strftime('%m/%d') %>
+          <span class="message-date"><%= "#{current_date} (#{I18n.t('date.abbr_day_names')[message.created_at.in_time_zone.wday]})" %>
+          </span>
+        <% end %>
         <div class="message">
           <div class="upper-message">
-            <div class="<%= message.user == current_user ? 'my-message__image' : 'your-message__image' %>">
-              <%= image_tag message.user.image.url, class: (message.user == current_user ? 'my-image' : 'your-image') %>
-            </div>
-            <div class="<%= message.user == current_user ? 'my-message__user' : 'your-message__user' %>">
-              <span class="<%= message.user == current_user ? 'my-full__name' : 'your-full__name' %>"><%= message.user.full_name %></span>
-            </div>
+            <% unless message.user == current_user %>
+              <div class="<%= message.user == current_user ? 'my-message__image' : 'your-message__image' %>">
+                <%= image_tag message.user.image.url, class: (message.user == current_user ? 'my-image' : 'your-image') %>
+              </div>
+              <div class="<%= message.user == current_user ? 'my-message__user' : 'your-message__user' %>">
+                <span class="<%= message.user == current_user ? 'my-full__name' : 'your-full__name' %>"><%= message.user.full_name %></span>
+              </div>
+            <% end %>
           </div>
-          <div class="lower-message">
-            <div class="<%= message.user == current_user ? 'my-message__content' : 'your-message__content' %>">
-              <span class="<%= message.user == current_user ? 'my-content' : 'your-content' %>"><%= message.content %></span>
-            </div>
-            <div class="<%= message.user == current_user ? 'my-message__date' : 'your-message__date' %>">
-              <span class="<%= message.user == current_user ? 'my-date' : 'your-date' %>"><%= message.created_at.in_time_zone.strftime('%H:%M') %></span>
-            </div>
+          <div class="<%= message.user == current_user ? 'my-lower__message' : 'your-lower__message' %>">
+            <% if message.user == current_user %>
+              <div class="my-message__content">
+                <% if message.content.present? %>
+                  <span class="my-content__text"><%= message.content %></span>
+                <% end %>
+                <% if message.image.present? %>
+                  <div class="my-message__image">
+                    <%= image_tag message.image.url, class: "my-content__image" %>
+                  </div>
+                <% end %>
+                <span class="my-content__date"><%= message.created_at.in_time_zone.strftime('%H:%M') %></span>
+              </div>
+            <% else %>
+              <div class="your-message__content">
+                <% if message.content.present? %>
+                  <span class="your-content__text"><%= message.content %></span>
+                <% end %>
+                <% if message.image.present? %>
+                  <div class="your-message__image">
+                    <%= image_tag message.image.url, class: "your-content__image" %>
+                  </div>
+                <% end %>
+                <span class="your-content__date"><%= message.created_at.in_time_zone.strftime('%H:%M') %></span>
+              </div>
+            <% end %>
           </div>
         </div>
       <% end %>
     </div>
 
+
     <div class='chat-form'>
       <%= form_with model: [@room, @message], class: 'form-message', local: true, multipart: true do |f| %>
         <%= f.text_field :content, class: 'chat-message', placeholder: 'メッセージを入力' %>
-        <%= f.file_field :image, class: 'chat-image' %>
+      <label class='chat-image__form'>
+        <%= f.file_field :image, class: 'chat-image', id: 'chat-image-file' %>
+        <input type="file" class="hidden" style="display:none">
+        <label for="chat-image-file" class="choose-file">画像</label>
+      </label>
+
         <%= f.submit '送信', class: 'form-submit' %>
       <% end %>
     </div>

@@ -3,16 +3,14 @@ class RoomsController < ApplicationController
   before_action :set_rooms, only: [:show, :edit, :update, :destroy]
 
   def index
-    if user_signed_in?
-      @rooms = current_user.rooms.includes(:users)
-    else
-      @rooms = Room.none
-    end
+    @rooms = if user_signed_in?
+               current_user.rooms.includes(:users)
+             else
+               Room.none
+             end
     @q = @rooms.ransack(params[:q])
     @rooms = @q.result(distinct: true)
   end
-  
-  
 
   def new
     @room = Room.new

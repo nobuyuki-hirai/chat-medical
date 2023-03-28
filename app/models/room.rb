@@ -10,7 +10,7 @@ class Room < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   def formatted_date
-    wd = ["日", "月", "火", "水", "木", "金", "土"]
+    wd = %w[日 月 火 水 木 金 土]
     created_at.strftime("%Y/%m/%d(#{wd[created_at.wday]})")
   end
 end

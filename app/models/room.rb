@@ -8,4 +8,9 @@ class Room < ApplicationRecord
   validates :name, presence: true
 
   mount_uploader :image, ImageUploader
+
+  def formatted_date
+    wd = %w[日 月 火 水 木 金 土]
+    created_at.strftime("%Y/%m/%d(#{wd[created_at.wday]})")
+  end
 end

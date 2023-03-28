@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   root to: "rooms#index"
   resources :users, only: [:show, :edit, :update]
   resources :rooms do
-    collection do
-      get 'search'
-    end
+    resources :messages, only: [:show, :create]
   end
 
   get 'rooms/revert/:id', to: 'rooms#revert_check'

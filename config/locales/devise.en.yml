@@ -63,3 +63,49 @@ en:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+
+ja:
+  devise:
+    failure:
+      user:
+        unauthenticated: '認証されていないユーザーです。'
+        not_found_in_database: 'メールアドレスまたはパスワードが間違っています。'
+        invalid: 'メールアドレスまたはパスワードが間違っています。'
+    sessions:
+      user:
+        signed_out: 'ログアウトしました。'
+ja:
+  activerecord:
+    attributes:
+      user:
+        first_name: "姓"
+        last_name: "名"
+        password: "パスワード"
+        hobby: "趣味"
+        context: "自己紹介文"
+        job_id: "職業"
+        image: "画像"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "を入力してください。"
+            password:
+              blank: "を入力してください。"
+              too_short: "は6文字以上で入力してください。"
+              invalid: "は半角英数字を含んだ6文字以上で入力してください。"
+            first_name:
+              blank: "を入力してください。"
+            last_name:
+              blank: "を入力してください。"
+            hobby:
+              blank: "を入力してください。"
+            context:
+              blank: "を入力してください。"
+            job_id:
+              blank: "を選択してください。"
+            image:
+              blank: "を選択してください"
+          messages:
+            blank: "職業を入力してください。"

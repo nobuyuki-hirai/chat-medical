@@ -8,7 +8,7 @@ class RoomsController < ApplicationController
              else
                Room.none
              end
-    @q = Room.ransack(params[:q])
+    @q = @rooms.ransack(params[:q])
     @rooms = @q.result(distinct: true)
   end
 
@@ -28,6 +28,8 @@ class RoomsController < ApplicationController
 
   def show
     @users = @room.users
+    @message = Message.new
+    @messages = @room.messages.includes(:user)
   end
 
   def edit

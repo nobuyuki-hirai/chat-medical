@@ -50,12 +50,12 @@
   <div class='caht-main'>
     <div class='room-contents'>
       <h2 class='title'>チャットルーム一覧表</h2>
-      <%= search_form_for @q, url: root_path, method: :get do |f| %>
-        <div class="input-wrapper">
-          <%= f.search_field :name_cont, class: "input-box", placeholder: "チャットルームを検索" %>
-          <%= f.submit "検索", class: "search-button" %>
-        </div>
-      <% end %>
+        <%= search_form_for @q, url: root_path, method: :get do |f| %>
+          <div class="input-wrapper">
+            <%= f.search_field :name_cont, class: "input-box", placeholder: "チャットルームを検索" %>
+            <%= f.submit "検索", class: "search-button" %>
+          </div>
+        <% end %>
     </div>
 
     <ul class='room-lists'>

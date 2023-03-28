@@ -160,7 +160,6 @@ span.message-date {
 .your-content__text {
   max-width: 45vw;
   color: #000000;
-  text-align: right;
   padding: 2px 4px;
   border-radius: 15px;
   background-color: #ffffff;
@@ -171,6 +170,7 @@ span.message-date {
   background-color: #d9f99d;
   text-align: left;
 }
+
 
 .my-content__image,
 .your-content__image {

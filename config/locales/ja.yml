@@ -14,3 +14,17 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
+  activerecord:
+    models:
+      room: "ルーム"
+    attributes:
+      room:
+        name: "チャットルーム名"
+      user:
+        user_ids: "ユーザーを2人以上選択してください"
+    errors:
+      models:
+        room:
+          attributes:
+            name: 
+              blank: "を入力してください"

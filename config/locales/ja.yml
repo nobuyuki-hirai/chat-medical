@@ -17,14 +17,43 @@ ja:
   activerecord:
     models:
       room: "ルーム"
+      user: "ユーザー"
     attributes:
       room:
         name: "チャットルーム名"
       user:
-        user_ids: "ユーザーを2人以上選択してください"
+        users_ids: "ユーザーを2人以上選択してください"
+        last_name: "名"
+      email:
+        presence: "Emailを入力してください。"
+        uniqueness:
+          one: "は既に存在しています。"
+          other: "%{count}件あります。"
+        format:
+          one: "Emailは不正な値です。"
+          other: "Emailは%{count}件不正な値です。"
+        taken:
+          one: "はすでに存在します。"
+          other: "%{count}件すでに存在します。"
+      password_confirmation: 
+        confirmation: "パスワードが一致しません。"
+        last_name:
+          blank:
+            one: "名を入力してください。"
+            other: "%{count}件名を入力してください。"
     errors:
+      format: "%{attribute} %{message}"
+      messages:
+        confirmation: "がパスワードと一致しません"
+        blank: "を入力してください"
+        taken: "はすでに存在します"
       models:
         room:
           attributes:
-            name: 
+            name:
               blank: "を入力してください"
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: "パスワードが一致しません"
+              password: "パスワード"

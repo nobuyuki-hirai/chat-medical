@@ -17,15 +17,15 @@ RSpec.describe Room, type: :model do
     end
     context 'チャットルームが作成できない場合' do
       it 'nameが空だと作成できない' do
-        @room.name = ""
+        @room.name = ''
         @room.valid?
-        expect(@room.errors.full_messages).to include("チャットルーム名を入力してください")
+        expect(@room.errors.full_messages).to include('チャットルーム名を入力してください')
       end
 
       it '招待するユーザーが1名以下の場合、作成できない' do
         @room.user_ids = [@room.creator.id]
         @room.valid?
-        expect(@room.errors.full_messages).to include("招待するユーザーを2名以上選択してください")
+        expect(@room.errors.full_messages).to include('招待するユーザーを2名以上選択してください')
       end
     end
   end

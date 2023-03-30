@@ -16,8 +16,8 @@ class Room < ApplicationRecord
   end
 
   def user_ids_present
-    if user_ids.length < 3
-      errors.add(:base, "招待するユーザーを2名以上選択してください")
-    end
+    return unless user_ids.length < 3
+
+    errors.add(:base, '招待するユーザーを2名以上選択してください')
   end
 end

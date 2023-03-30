@@ -5,7 +5,7 @@ FactoryBot.define do
     image           { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.jpg')) }
     user_ids        { [association(:user).id, association(:user).id, association(:user).id] }
 
-    after(:build) do | room, evaluator |
+    after(:build) do |room, evaluator|
       room.user_ids = evaluator.user_ids
     end
   end

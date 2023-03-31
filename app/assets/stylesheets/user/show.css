@@ -11,6 +11,61 @@
   margin-bottom: 2vh;
 }
 
+h3 {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+
+.btn-create,
+.btn-delete {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 2;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.5);
+  color: #000;
+}
+
+.btn-create {
+  background-color: #ccfbf1;
+  border-color: #ccfbf1;
+}
+
+.btn-delete {
+  background-color: #fb7185;
+  border-color: #fb7185;
+}
+
+.btn-create:hover,
+.btn-delete:hover {
+  box-shadow: 15px 15px 15px 0 rgba(100,100,100,0.9);
+  transform: translateY(-2px);
+}
+
+.follow-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.follow-header,
+.follower-header,
+.follow-count,
+.follower-count {
+  text-decoration: none;
+  color: #000000;
+}
+
 .mypage-title img {
   margin: 0 auto;
   margin-top: 10vh;

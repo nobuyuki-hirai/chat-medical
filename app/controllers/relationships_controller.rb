@@ -1,5 +1,4 @@
 class RelationshipsController < ApplicationController
-
   def index
     @user = User.find(params[:user_id])
     @following_users = @user.followings

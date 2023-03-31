@@ -4,7 +4,7 @@
   <div class='mypage-title'>Plofile
   <% if current_user != @user %>
     <% if @user.followed_by?(current_user) %>
-      <%=link_to "フォロー解除", user_relationships_path(@user.id),class: "btn-delete" , method: :delete %>
+      <%=link_to "フォロー中", user_relationship_path(@user.id),class: "btn-delete" , method: :delete %>
     <% else %>
       <%=link_to "フォローする", user_relationships_path(@user.id),class: "btn-create" ,method: :post %>
     <% end %>
@@ -12,8 +12,8 @@
     <img src=<%= @user.image %> class='icon_image'>
   </div>
 <div class="follow-container">
-  <h3><%= link_to "フォロー", "#", class: "follow-header" %> <span><%= link_to @user.followings.count, "#", class: "follow-count" %></span></h3>
-  <h3><%= link_to "フォロワー", "#", class: "follower-header" %><span><%= link_to @user.followers.count, "#", class: "follower-count" %></span></h3>
+    <h3><%= link_to "フォロー", user_relationships_path(@user.id), class: "follow-header" %> <span><%= link_to @user.followings.count, "#", class: "follow-count" %></span></h3>
+    <h3><%= link_to "フォロワー", user_relationships_path(@user.id), class: "follower-header" %><span><%= link_to @user.followers.count, "#", class: "follower-count" %></span></h3>
 </div>
   <h2 class='input-form'>名前</h2>
     <div class='name-text'>

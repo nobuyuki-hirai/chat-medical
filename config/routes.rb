@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "rooms#index"
   resources :users, only: [:show, :edit, :update] do
-    resource :relationships, only: [:create, :destroy]
-  end  
+    resources :relationships, only: [:index, :create, :destroy]
+  end
   resources :rooms do
     resources :messages, only: [:show, :create]
   end

@@ -1,0 +1,68 @@
+.relationships {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow-y: scroll;
+}
+
+.follow-list,
+.followers-list {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.following-header,
+.followers-header{
+  margin: 5vh 0 2vh 0;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.following-count,
+.followers-count {
+  text-decoration: none;
+  color: #000000;
+  font-size: 36px;
+  margin-left: 2vw;
+}
+
+.following-user,
+.followers-user {
+  width: 100%;
+}
+
+.following-user a,
+.followers-user a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.user-following,
+.user-followers {
+  width: 5vw;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.following-user ul,
+.followers-user ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+}
+
+.following-user ul li,
+.followers-user ul li {
+  margin: 10px 0;
+  box-shadow: 5px 5px 5px 0 rgba(100,100,100,0.5);
+}
+
+.following-user ul li:hover,
+.followers-user ul li:hover {
+  box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.9);
+}

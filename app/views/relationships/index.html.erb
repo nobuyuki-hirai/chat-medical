@@ -1,0 +1,38 @@
+<%= render "shared/header" %>
+
+<div class="relationships">
+  <div class="follow-list">
+    <div class="following-header">フォロー数
+      <span class="following-count"><%= @user.followings.count %></span>
+    </div>
+    <div class="following-user">
+      <ul>
+        <% @following_users.each do |user| %>
+          <li>
+          <%= link_to user_path(user) do %>
+            <%= image_tag(user.image.url, class: "user-following") %>
+          <% end %>
+          <%= link_to user.full_user, user_path(user) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="followers-list">
+    <div class="followers-header">フォロワー数
+      <span class="followers-count"><%= @user.followers.count %></span>
+    </div>
+    <div class="followers-user">
+      <ul>
+        <% @follower_users.each do |user| %>
+          <li>
+            <%= link_to user_path(user) do %>
+              <%= image_tag(user.image.url, class: "user-followers") %>
+          <% end %>
+          <%= link_to user.full_user, user_path(user) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

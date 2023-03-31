@@ -233,11 +233,14 @@ span {
 
 
 .room-info {
+  margin-left: 1.5vw;
   color: black;
   padding: 1vw;
+  text-align: center;
 }
 
 .room-info__name {
+  width: 10vw;
   font-size: 3vh;
   text-align: center;
   box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.5);
@@ -245,6 +248,7 @@ span {
 }
 
 .room-info__creator {
+  width: 10vw;
   font-size: 3vh;
   text-align: center;
   box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.5);

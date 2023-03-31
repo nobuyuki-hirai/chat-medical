@@ -64,6 +64,19 @@ h3 {
 .follower-count {
   text-decoration: none;
   color: #000000;
+  box-shadow: 5px 5px 5px 0 rgba(100,100,100,0.2);
+}
+
+.follow-count,
+.follower-count {
+  padding-left: 1vw;
+}
+
+.follow-header:hover,
+.follower-header:hover,
+.follow-count:hover,
+.follower-count:hover {
+  box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.9);
 }
 
 .mypage-title img {

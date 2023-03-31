@@ -42,5 +42,10 @@ class User < ApplicationRecord
     "#{last_name}#{first_name}(#{job[:name]})"
   end
 
+  def followed_by?(user)
+    follower =  passive_relationships.find_by(following_id: user.id)
+    return follower.present?
+  end
+
   mount_uploader :image, ImageUploader
 end

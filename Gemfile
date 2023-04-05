@@ -69,4 +69,3 @@ end
   gem 'image_processing', '~> 1.2'
   gem 'ransack'
   gem 'rails-i18n'
-  gem 'simple_calendar', '~> 2.0'

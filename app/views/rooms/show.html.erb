@@ -27,7 +27,7 @@
           </div>
         <% end %>
         <div class="chat-event" style="float: right;">
-          <%= link_to "イベント", "#", class: "event-name" %>
+          <%= link_to "イベント", room_events_path(@room.id), class: "event-name" %>
         </div>
       </div>
     </div>

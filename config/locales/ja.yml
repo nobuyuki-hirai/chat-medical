@@ -57,3 +57,16 @@ ja:
             password_confirmation:
               confirmation: "パスワードが一致しません"
               password: "パスワード"
+  activerecord:
+    models:
+      event: "イベント"
+    attributes:
+      event:
+        name: "名前"
+        place: "場所"
+        start_time: "開始時間"
+        end_time: "終了時間"
+        text: "テキスト"
+    errors:
+      messages:
+        blank: "を入力してください"

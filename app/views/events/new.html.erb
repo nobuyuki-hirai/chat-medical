@@ -1,0 +1,56 @@
+<%= render "shared/header" %>
+
+<%= form_with model: @event, url: room_events_path, method: :post , class: 'registration-main', local: true do |f| %>
+
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      イベント情報入力
+    </h1>
+  </div>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">イベント名</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :name, class:"input-default", id:"name" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">場所</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :place, class:"input-default", id:"place" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label for="date" class="form-text">開始時刻</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.datetime_field :start_time, class:"input-default", id:"start_time" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label for="end_time" class="form-text">終了時刻</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.datetime_field :end_time, class:"input-default", id:"end_time" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">概要</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :text, class:"input-context", id:"text", rows: 15, placeholder:"例) 300文字以内", maxlength:"300" %>
+  </div>
+  <div class='register-btn'>
+    <%= f.submit "イベント作成" ,class:"register-red-btn" %>
+  </div>
+  <div class="back-btn">
+    <%= link_to "戻る", room_events_path, class: "event-back__btn" %>
+  </div>
+</div>
+<% end %>

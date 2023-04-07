@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_06_080507) do
+ActiveRecord::Schema.define(version: 2023_04_07_165056) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,18 +33,27 @@ ActiveRecord::Schema.define(version: 2023_04_06_080507) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "event_participates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_event_participates_on_event_id"
+    t.index ["user_id"], name: "index_event_participates_on_user_id"
+  end
+
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "text"
     t.string "place"
-    t.datetime "date_and_time"
-    t.datetime "event_finish_time"
-    t.bigint "true_id"
-    t.bigint "false_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.bigint "user_id", null: false
+    t.bigint "room_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["false_id"], name: "index_events_on_false_id"
-    t.index ["true_id"], name: "index_events_on_true_id"
+    t.index ["room_id"], name: "index_events_on_room_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -105,6 +114,10 @@ ActiveRecord::Schema.define(version: 2023_04_06_080507) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "event_participates", "events"
+  add_foreign_key "event_participates", "users"
+  add_foreign_key "events", "rooms"
+  add_foreign_key "events", "users"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
   add_foreign_key "room_users", "rooms"

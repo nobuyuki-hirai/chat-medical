@@ -14,12 +14,7 @@ class User < ApplicationRecord
 
   has_many :passive_relationships, class_name: 'Relationship', foreign_key: :follower_id
   has_many :followers, through: :passive_relationships, source: :following
-
-  has_many :active_events, class_name: 'Event', foreign_key: :true_id
-  has_many :true, through: :active_events, source: :false
-
-  has_many :passive_events, class_name: 'Event', foreign_key: :false_id
-  has_many :false, through: :passive_events, source: :true
+  has_many :event_participates, dependent: :destroy
 
   validates :last_name,             presence: true
   validates :first_name,            presence: true

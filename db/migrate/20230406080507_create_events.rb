@@ -4,10 +4,10 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.string         :name
       t.string         :text
       t.string         :place
-      t.datetime       :date_and_time
-      t.datetime       :event_finish_time
-      t.references     :true
-      t.references     :false
+      t.datetime       :start_time
+      t.datetime       :end_time
+      t.references     :user, null: false, foreign_key: true
+      t.references     :room, null: false, foreign_key: true
       t.timestamps
     end
   end

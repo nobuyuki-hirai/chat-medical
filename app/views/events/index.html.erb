@@ -1,0 +1,22 @@
+<%= render "shared/header" %>
+
+<div class= 'calender'>
+  <div class='calender-table'>
+  <%= month_calendar events: @events do |date, event| %>
+    <%= date.day %>
+    <% event.each do |event| %>
+    <br>
+    <i class="fa fa-circle notification-circle" style="color: red;"></i>
+      <% if event.event_participates.where(user_id: current_user).exists? %>
+        <span class="participate">
+          <%= link_to event.title,event_path(event) %>
+        </span>
+      <% else %>
+        <span class="other">
+          <%= link_to event.title,event_path(event) %>
+        </span>
+      <% end %>
+    <% end %>
+  <% end %>
+  </div>
+</div>

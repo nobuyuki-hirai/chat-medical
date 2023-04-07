@@ -4,10 +4,10 @@ class Event < ApplicationRecord
   belongs_to :room
 
   def start_time
-    self.date_and_time
+    date_and_time
   end
 
   def end_time
-    self.event_finish_time
+    event_finish_time
   end
 end

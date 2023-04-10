@@ -6,8 +6,8 @@
     <%= date.day %>
       <br>
       <% event.each do |event|%>
-        <% if event.user_id == current_user.id %>
-          <i class="fa fa-circle notification-circle" style="color: red;"></i>
+        <% if event.organizer_id == current_user.id %>
+          <span class="notification-circle" ></span>
         <% end %>
         <% if event.event_participates.where(user_id: current_user).exists? %>
           <span class="participate">

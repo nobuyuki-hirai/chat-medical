@@ -11,6 +11,7 @@ class EventsController < ApplicationController
 
   def create
     @event = @room.events.new(event_params)
+    @event.organizer = current_user
     if @event.save
       redirect_to room_events_path
     else

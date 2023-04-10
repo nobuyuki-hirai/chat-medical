@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_07_165056) do
+ActiveRecord::Schema.define(version: 2023_04_10_175142) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2023_04_07_165056) do
     t.bigint "room_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "organizer_id"
+    t.index ["organizer_id"], name: "index_events_on_organizer_id"
     t.index ["room_id"], name: "index_events_on_room_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
@@ -118,6 +120,7 @@ ActiveRecord::Schema.define(version: 2023_04_07_165056) do
   add_foreign_key "event_participates", "users"
   add_foreign_key "events", "rooms"
   add_foreign_key "events", "users"
+  add_foreign_key "events", "users", column: "organizer_id"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
   add_foreign_key "room_users", "rooms"

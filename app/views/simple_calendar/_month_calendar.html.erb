@@ -9,14 +9,20 @@
     <div class="next-link">
       <%= link_to t('simple_calendar.next', default: '>>'), calendar.url_for_next_view %>
     </div>
-    <div class="event-new">
-      <%= link_to "作成", new_room_event_path, class: "event-new__name"%>
+    <div class="event-btn">
+      <%= link_to "作成", new_room_event_path, class: "event-btn__name"%>
     </div>
-    <div class="event-destroy">
-      <%= link_to "削除", "#", method: :delete, class: "event-destroy__name", data: { confirm: '本当に削除しますか？' } %>
+    <div class="event-btn">
+      <%= link_to "削除", "#", method: :delete, class: "event-btn__name", data: { confirm: '本当に削除しますか？' } %>
     </div>
-    <div class="event-edit" >
-      <%= link_to "編集", "#", class: "event-edit__name"%>
+    <div class="event-btn" >
+      <%= link_to "編集", "#", class: "event-btn__name"%>
+    </div>
+    <div class="event-btn" >
+      <%= link_to "戻る", room_path(@room.id), class: "event-btn__name"%>
+    </div>
+    <div class="event-circle ">
+      <span class="notification-circle" ></span>:主催者イベント
     </div>
   </div>
 

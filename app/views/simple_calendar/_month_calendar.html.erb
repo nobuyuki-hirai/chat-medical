@@ -13,13 +13,16 @@
       <%= link_to "作成", new_room_event_path, class: "event-btn__name"%>
     </div>
     <div class="event-btn">
-      <%= link_to "削除", "#", method: :delete, class: "event-btn__name", data: { confirm: '本当に削除しますか？' } %>
-    </div>
-    <div class="event-btn" >
       <%= link_to "戻る", room_path(@room.id), class: "event-btn__name"%>
     </div>
-    <div class="event-circle ">
+    <div class="event-circle">
       <span class="notification-circle" ></span>:主催者イベント
+    </div>
+    <div class="event-organizer">
+      <span class="event-organizer__name">参加予定のイベント</span>
+    </div>
+    <div class="event-other">
+      <span class="event-other__name">不参加のイベント</span>
     </div>
   </div>
 

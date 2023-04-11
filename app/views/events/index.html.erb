@@ -11,11 +11,11 @@
         <% end %>
         <% if event.event_participates.where(user_id: current_user).exists? %>
           <span class="participate">
-          <%= link_to event.name, room_event_path(@room, event), class: "event-name" %>
-        </span>
+            <%= link_to event.name, room_event_path(@room, event), class: "event-name" %><br>
+          </span>
         <% else %>
           <span class="other">
-          <%= link_to event.name, room_event_path(@room, event), class: "event-name" %>
+            <%= link_to event.name, room_event_path(@room, event), class: "event-name" %><br>
           </span>
         <% end %>
       <% end %>

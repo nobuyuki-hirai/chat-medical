@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-  before_action :set_events, only: [:index, :create, :show]
+  before_action :set_events, only: [:index, :create, :show, :edit, :update]
+  before_action :set_event, only: [:show, :edit, :update]
 
   def index
     @events = Event.all
@@ -20,14 +21,28 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
     @event_participates = @event.event_participates.includes(:user)
+  end
+
+  def edit
+  end
+
+  def update
+    if @event.update(event_params)
+      redirect_to room_events_path
+    else
+      render :edit
+    end
   end
 
   private
 
   def set_events
     @room = Room.find(params[:room_id])
+  end
+
+  def set_event
+    @event = Event.find(params[:id])
   end
 
   def event_params

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   end
   resources :rooms do
     resources :messages, only: [:show, :create]
-    resources :events, only: [:index, :new, :create, :show]
+    resources :events, only: [:index, :new, :create, :show] do
+      resources :event_participates, only: [:create, :destroy]
+    end
   end
 
   get 'rooms/revert/:id', to: 'rooms#revert_check'

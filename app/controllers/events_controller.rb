@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-  before_action :set_events, only: [:index, :create, :show, :edit, :update]
-  before_action :set_event, only: [:show, :edit, :update]
+  before_action :set_events, only: [:index, :create, :show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
     @events = Event.all
@@ -32,6 +32,14 @@ class EventsController < ApplicationController
       redirect_to room_events_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @event.destroy
+      redirect_to room_events_path
+    else
+      render :show
     end
   end
 

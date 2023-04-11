@@ -2,22 +2,22 @@
 
 
 <div class= 'calender'>
-  <%= month_calendar events: @events do |date, event| %>
+  <%= month_calendar events: @events.where(room_id: @room.id) do |date, event| %>
     <%= date.day %>
       <br>
       <% event.each do |event|%>
-      <% if event.user_id == current_user.id %>
-        <i class="fa fa-circle notification-circle" style="color: red;"></i>
-      <% end %>
-      <% if event.event_participates.where(user_id: current_user).exists? %>
-        <span class="participate">
-        <%= link_to event.name,"#", class: "event-name" %>
-       </span>
-      <% else %>
-        <span class="other">
-        <%= link_to event.name,"#", class: "event-name" %>
+        <% if event.organizer_id == current_user.id %>
+          <span class="notification-circle" ></span>
+        <% end %>
+        <% if event.event_participates.where(user_id: current_user).exists? %>
+          <span class="participate">
+          <%= link_to event.name, room_event_path(@room, event), class: "event-name" %>
         </span>
-      <% end %>
+        <% else %>
+          <span class="other">
+          <%= link_to event.name, room_event_path(@room, event), class: "event-name" %>
+          </span>
+        <% end %>
       <% end %>
   <% end %>
 </div>

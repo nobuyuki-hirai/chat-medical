@@ -18,9 +18,7 @@
   transform: translateY(-2px);
 }
 
-.event-new,
-.event-destroy,
-.event-edit {
+.event-btn {
   display: inline-block;
   padding: 5px 10px;
   margin: 0 0 1vh 1.5vw;
@@ -35,18 +33,33 @@
   transition: all 0.3s ease;
 }
 
-.event-new:hover,
-.event-destroy:hover,
-.event-edit:hover {
+.event-btn:hover {
   box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
   transform: translateY(-2px);
 }
 
-.event-new__name,
-.event-destroy__name,
-.event-edit__name {
+.event-circle {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 0 1vh 1.5vw;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+}
+
+.event-btn__name {
   text-decoration: none;
   color: #000000;
+}
+
+.notification-circle {
+  font-size: 10px;
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+  padding: 3px 7px;
 }
 
 .calendar-title {

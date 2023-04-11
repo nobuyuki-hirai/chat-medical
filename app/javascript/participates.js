@@ -1,4 +1,4 @@
-window.addEventListener('load', function(){
+function pullDown() {
 
   const pullDownButton = document.getElementById("participant-dropdown")
   const pullDownParents = document.getElementById("pull-down")
@@ -6,5 +6,5 @@ window.addEventListener('load', function(){
   pullDownButton.addEventListener('click', function() {
     pullDownParents.classList.toggle("hidden");
   })
-
-})
+}
+window.addEventListener('load', pullDown)

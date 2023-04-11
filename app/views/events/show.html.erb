@@ -9,7 +9,7 @@
             <%= link_to "編集", edit_room_event_path(@room, @event), class: "event-edit__name" %>
           </div>
           <div class="event-destroy">
-            <%= link_to "削除", "#", method: :delete, class: "event-destroy__name", data: { confirm: '本当に削除しますか？' } %>
+            <%= link_to "削除", room_event_path(@room, @event), method: :delete, class: "event-destroy__name", data: { confirm: '本当に削除しますか？' } %>
           </div>
         </div>
       </div>

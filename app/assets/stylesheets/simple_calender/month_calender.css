@@ -49,6 +49,21 @@
   border-radius: 5px;
 }
 
+.event-organizer {
+  display: inline-block;
+  background-color: #fdba74;
+}
+
+.event-other {
+  display: inline-block;
+  background-color: #6ee7b7;
+}
+
+.event-organizer__name,
+.event-other__name {
+  color: #000000;
+}
+
 .event-btn__name {
   text-decoration: none;
   color: #000000;

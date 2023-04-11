@@ -1,0 +1,150 @@
+.event-show__main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.events-show__form {
+  width: 95vw;
+  height: 95vh;
+  border: 5px double #000;
+  border-radius: 50%;
+  box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
+}
+
+.event-form__top {
+  height: 3vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.event-buttons {
+  display: flex;
+}
+
+.event-destroy,
+.event-edit,
+.event-back,
+.event-danger,
+.event-primary {
+  height: 5vh;
+  margin-right: 2vw;
+  padding: 10px 20px;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 7px 7px 7px 0 rgba(100,100,100,0.5);
+  transition: all 0.3s ease;
+  background-color: #d9f99d;
+}
+
+.event-destroy:hover,
+.event-edit:hover,
+.event-back:hover,
+.event-danger:hover,
+.event-primary:hover {
+  box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
+  transform: translateY(-2px);
+}
+
+.event-danger {
+  background-color: #fda4af;
+}
+
+.event-primary {
+  background-color: #ccfbf1;
+}
+
+.event-back {
+  text-align: center;
+  background-color: #d1d5db;
+}
+
+.event-destroy__name,
+.event-edit__name {
+  text-decoration: none;
+  color: #000000;
+}
+
+.event-show__form {
+  display: flex;
+}
+
+.event-form__left {
+  width: 30vw;
+  margin: 16vh 12vw 3vh;
+}
+
+.event-form__right {
+  width: 70vw;
+  text-align: center;
+  margin: 16vh 10vw 3vh;
+}
+
+.event-title,
+.event-text {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+  background-color: #d1d5db;
+  padding: 1vh 1vw;
+  border-radius: 10%;
+}
+
+.event-show__name,
+.event-show__text {
+  font-size: 18px;
+  margin: 1vh 0;
+}
+
+.event-participates__form {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-danger,
+.btn-primary {
+  text-decoration: none;
+  color: #000000;
+}
+
+#participants-list {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  z-index: 1000;
+  background-color: white;
+  border: 1px solid gray;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+.event-edit__name {
+  cursor: pointer;
+}
+
+.participants-list {
+  display: block;
+  margin: 5vh 2vw 0;
+  background-color: #d9f99d;
+  border: 2px solid #000; 
+  box-shadow: 10px 10px 10px 0 rgba(100,100,100,0.5);
+}
+
+.participants-list li {
+  list-style: none;
+  font-size: 16px;
+}
+
+.hidden {
+  display: none !important;
+}

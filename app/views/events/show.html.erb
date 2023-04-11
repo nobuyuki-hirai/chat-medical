@@ -1,0 +1,78 @@
+<%= render "shared/header" %>
+
+
+<div class="event-show__main">
+  <div class="events-show__form">
+    <% if @event.organizer == current_user %>
+      <div class="event-form__top">
+        <div class="event-buttons">
+          <div class="event-edit" >
+            <%= link_to "編集", "#", class: "event-edit__name" %>
+          </div>
+          <div class="event-destroy">
+            <%= link_to "削除", "#", method: :delete, class: "event-destroy__name", data: { confirm: '本当に削除しますか？' } %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <div class="event-show__form">
+      <div class="event-form__left">
+        <span class="event-title">イベント名</span>
+        <div class="event-show__name">
+          <%= @event.name %>
+        </div>
+        <span class="event-title"> 開催場所</span>
+        <div class="event-show__name">
+          <%= @event.place %>
+        </div>
+        <span class="event-title">開始時間</span>
+        <div class="event-show__name">
+          <%= @event.start_time.strftime('%H:%M') %>
+        </div>
+        <span class="event-title">終了時間</span>
+        <div class="event-show__name">
+          <%= @event.end_time.strftime('%H:%M') %>
+        </div>
+      </div>
+      <div class="event-form__right">
+        <span class="event-text">概要</span>
+        <div class="event-show__text">
+          <%= @event.text %>
+        </div>
+        <div class="participants-list hidden" id="pull-down" >
+        <% if @event_participates.any? %>
+            <% @event_participates.each do |event_participate| %>
+              <li><%= event_participate.user.full_user %></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p>まだ誰も参加していません。</p>
+        <% end %>
+      </div>
+      </div>
+    </div>
+    <div class="event-participates__form">
+      <% if user_signed_in? %>
+        <% if current_user.event_participates.exists?(event_id: @event.id) %>
+          <div class="event-danger" >
+            <%= link_to "参加を取り消す", room_event_event_participate_path(event_id: @event.id), method: :delete, class: "btn-danger" %>
+          </div>
+        <% else %>
+          <div class="event-primary" >
+            <%= link_to "参加する", room_event_event_participates_path(event_id: @event.id), method: :post, class: "btn-primary" %>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="event-buttons">
+        <div class="event-back" >
+          <%= link_to "戻る", room_events_path(@room.id), class: "event-edit__name" %>
+        </div>
+      </div>
+      <div class="event-buttons">
+        <div class="event-back">
+        <span class="event-edit__name", id="participant-dropdown" >参加者一覧</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

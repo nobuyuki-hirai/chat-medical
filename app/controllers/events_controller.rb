@@ -21,6 +21,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @event_participates = @event.event_participates.includes(:user)
   end
 
   private

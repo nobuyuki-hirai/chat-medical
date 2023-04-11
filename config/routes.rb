@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   resources :rooms do
     resources :messages, only: [:show, :create]
-    resources :events, only: [:index, :new, :create, :show, :edit, :update] do
+    resources :events do
       resources :event_participates, only: [:create, :destroy]
     end
   end

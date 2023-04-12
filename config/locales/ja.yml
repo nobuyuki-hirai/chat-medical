@@ -66,7 +66,7 @@ ja:
         place: "場所"
         start_time: "開始時間"
         end_time: "終了時間"
-        text: "テキスト"
+        text: "概要"
     errors:
       messages:
         blank: "を入力してください"

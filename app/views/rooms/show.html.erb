@@ -83,7 +83,7 @@
     </div>
 
     <div class='chat-form'>
-      <%= form_with model: @message, class: 'form-message', local: true, multipart: true do |f| %>
+      <%= form_with model: [@room, @message], class: 'form-message', local: true, multipart: true do |f| %>
         <%= f.text_field :content, class: 'chat-message', placeholder: 'メッセージを入力' %>
       <label class='chat-image__form'>
         <%= f.file_field :image, class: 'chat-image', id: 'chat-image-file' %>

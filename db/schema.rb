@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 2023_04_13_081144) do
   end
 
   create_table "talks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "talk"
+    t.string "text"
     t.boolean "read"
     t.bigint "sender_id", null: false
     t.bigint "recipient_id", null: false

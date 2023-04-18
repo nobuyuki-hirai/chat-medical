@@ -16,8 +16,8 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :following
   has_many :event_participates, dependent: :destroy
 
-  has_many :sent_talks, class_name: "Talk", foreign_key: "sender_id", dependent: :destroy
-  has_many :received_talks, class_name: "Talk", foreign_key: "recipient_id", dependent: :destroy
+  has_many :sent_talks, class_name: "Talk", foreign_key: "sender_id",   dependent: :destroy
+  has_many :reads, dependent: :destroy
 
   validates :last_name,             presence: true
   validates :first_name,            presence: true

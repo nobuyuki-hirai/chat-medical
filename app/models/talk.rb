@@ -1,5 +1,5 @@
 class Talk < ApplicationRecord
-  belongs_to :sender, class_name: "User"
+  belongs_to :sender, class_name: 'User'
   has_many :reads,    dependent: :destroy
 
   attribute :read, :boolean, default: false

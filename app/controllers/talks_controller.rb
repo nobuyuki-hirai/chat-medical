@@ -18,7 +18,7 @@ class TalksController < ApplicationController
       render 'index'
     end
   end
-  
+
   private
 
   def talk_params

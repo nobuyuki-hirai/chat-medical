@@ -1,0 +1,74 @@
+.talk-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #bae6fd;
+}
+
+.talk-header {
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  box-shadow: 7px 7px 7px 0 rgba(100,100,100,0.5);
+}
+
+.talk-partner {
+  display: flex;
+  align-items: center;
+}
+
+.talk-partner__name {
+  text-decoration: none;
+  color: #000000;
+  margin-left: 1vw;
+  background-color: transparent;
+  box-shadow: 7px 7px 7px 0 rgba(100,100,100,0.5);
+  transition: all 0.3s ease;
+  opacity: 0.5;
+}
+
+.icon-img {
+  width: 5vw;
+  height: 10vh;
+  margin-left: 1vw;
+  border-radius: 100px;
+  object-fit: cover;
+  box-shadow: 7px 7px 7px 0 rgba(100,100,100,0.5);
+}
+
+.icon-img:hover,
+.talk-partner__name:hover {
+  box-shadow: 12px 12px 12px 0 rgba(100,100,100,0.9);
+  transform: translateY(-2px);
+}
+
+.talk-main {
+  height: calc(100vh - 15vh);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.my-talk__text {
+  display: flex;
+}
+
+.my-content__read {
+  color: #000000;
+  font-size: 5px;
+}
+
+.my-content__talk {
+  color: #000000;
+  padding: 2px 4px;
+  border-radius: 15px;
+  background-color: #d9f99d;
+  box-shadow: 3px 3px 3px 0 rgba(50,50,50,0.5);
+  display: inline-block;
+}
+
+.talk-form {
+  height: 20vh;
+  background-color: #bae6fd;
+}

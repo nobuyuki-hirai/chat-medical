@@ -1,0 +1,76 @@
+<%= render "shared/header" %>
+
+<div class="talk-wrapper">
+  <div class="talk-header">
+    <div class="talk-partner">
+      <%= link_to image_tag(@user.image.url, class: 'icon-img'), user_path(@user) %>
+      <%= link_to @user.full_user, user_path(@user), class: 'talk-partner__name' %>
+    </div>
+  </div>
+  <div class="talk-main">
+    <% current_date = nil %>
+    <% @talks.each do |talk| %>
+      <% if talk.created_at.in_time_zone.strftime('%m/%d') != current_date %>
+        <% current_date = talk.created_at.in_time_zone.strftime('%m/%d') %>
+        <span class="message-date"><%= "#{current_date} (#{I18n.t('date.abbr_day_names')[talk.created_at.in_time_zone.wday]})" %></span>
+      <% end %>
+      <div class="message">
+        <div class="upper-message">
+          <% unless talk.sender == current_user %>
+            <div class="your-message__image">
+              <%= image_tag talk.sender.image.url, class: "your-image" %>
+            </div>
+            <div class="your-message__user">
+              <span class="your-full__name"><%= talk.sender.full_name %></span>
+            </div>
+          <% end %>
+        </div>
+        <div class="<%= talk.sender == current_user ? 'my-lower__message' : 'your-lower__message' %>">
+          <% if talk.sender == current_user %>
+            <div class="my-message__content">
+              <% if talk.text.present? %>
+                <div class="my-talk_text">
+                  <span class="my-content__read">
+                  <%= talk&.read ? '既読' : '未読' %>
+                  </span>
+                  <span class="my-content__talk"><%= talk.text %></span>
+                </div>
+              <% end %>
+              <% if talk.image.present? %>
+                <div class="my-message__image">
+                  <%= image_tag talk.image.url, class: "my-content__image" %>
+                </div>
+              <% end %>
+              <span class="my-content__date"><%= talk.created_at.in_time_zone.strftime('%H:%M') %></span>
+            </div>
+          <% else %>
+            <div class="your-message__content">
+              <% if talk.text.present? %>
+                <span class="your-content__text"><%= talk.text %></span>
+              <% end %>
+              <% if talk.image.present? %>
+                <div class="your-message__image">
+                  <%= image_tag talk.image.url, class: "your-content__image" %>
+                </div>
+              <% end %>
+              <span class="your-content__date"><%= talk.created_at.in_time_zone.strftime('%H:%M') %></span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="talk-form">
+    <%= form_with model: @talk, url: user_talks_path(@user), class: 'form-message', local: true, multipart: true do |f| %>
+      <%= f.hidden_field :sender_id, value: current_user.id %>
+      <%= f.hidden_field :user_id, value: @user.id %>
+      <%= f.text_field :text, class: 'chat-message', placeholder: 'メッセージを入力' %>
+      <label class='chat-image__form'>
+        <%= f.file_field :image, class: 'chat-image', id: 'chat-image-file' %>
+        <input type="file" class="hidden" style="display:none">
+        <label for="chat-image-file" class="choose-file">画像</label> 
+      </label>
+      <%= f.submit '送信', class: 'form-submit' %>
+    <% end %>
+  </div>
+</div>

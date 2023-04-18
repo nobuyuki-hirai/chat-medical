@@ -82,7 +82,6 @@
       <% end %>
     </div>
 
-
     <div class='chat-form'>
       <%= form_with model: [@room, @message], class: 'form-message', local: true, multipart: true do |f| %>
         <%= f.text_field :content, class: 'chat-message', placeholder: 'メッセージを入力' %>

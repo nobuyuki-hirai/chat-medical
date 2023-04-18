@@ -5,6 +5,7 @@
   <% if current_user != @user %>
     <% if @user.followed_by?(current_user) %>
       <%=link_to "フォロー中", user_relationship_path(@user.id),class: "btn-delete" , method: :delete %>
+      <%=link_to "トークする", user_talks_path(@user.id),class: "btn-talk" %>
     <% else %>
       <%=link_to "フォローする", user_relationships_path(@user.id),class: "btn-create" ,method: :post %>
     <% end %>

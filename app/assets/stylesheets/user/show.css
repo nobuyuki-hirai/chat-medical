@@ -18,7 +18,8 @@ h3 {
 }
 
 .btn-create,
-.btn-delete {
+.btn-delete,
+.btn-talk {
   display: inline-block;
   padding: 6px 12px;
   font-size: 14px;
@@ -45,8 +46,14 @@ h3 {
   border-color: #fb7185;
 }
 
+.btn-talk {
+  background-color: #bef264;
+  border-color: #bef264;
+}
+
 .btn-create:hover,
-.btn-delete:hover {
+.btn-delete:hover,
+.btn-talk:hover {
   box-shadow: 15px 15px 15px 0 rgba(100,100,100,0.9);
   transform: translateY(-2px);
 }

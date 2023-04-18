@@ -1,7 +1,7 @@
 class Room < ApplicationRecord
   has_many :room_users, dependent: :destroy
   has_many :users, through: :room_users, validate: false
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_many :events, dependent: :destroy
   belongs_to :creator, class_name: 'User'
 

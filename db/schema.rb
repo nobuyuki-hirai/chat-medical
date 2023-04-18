@@ -101,12 +101,12 @@ ActiveRecord::Schema.define(version: 2023_04_13_081144) do
     t.string "text"
     t.boolean "read"
     t.bigint "sender_id", null: false
-    t.bigint "recipient_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
-    t.index ["recipient_id"], name: "index_talks_on_recipient_id"
     t.index ["sender_id"], name: "index_talks_on_sender_id"
+    t.index ["user_id"], name: "index_talks_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -138,6 +138,6 @@ ActiveRecord::Schema.define(version: 2023_04_13_081144) do
   add_foreign_key "room_users", "rooms"
   add_foreign_key "room_users", "users"
   add_foreign_key "rooms", "users", column: "creator_id"
-  add_foreign_key "talks", "users", column: "recipient_id"
+  add_foreign_key "talks", "users"
   add_foreign_key "talks", "users", column: "sender_id"
 end

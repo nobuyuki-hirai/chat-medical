@@ -6,7 +6,6 @@ class TalksController < ApplicationController
     @talks.where(read: false, user_id: current_user.id).update_all(read: true)
     @talk = Talk.new
     @talks.where(read: false, sender_id: @user.id).each(&:mark_as_read!)
-    current_user.update(last_accessed_at: Time.current)
   end
 
   def create

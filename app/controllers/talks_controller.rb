@@ -2,11 +2,11 @@ class TalksController < ApplicationController
   before_action :set_talks, only: [:index, :create]
 
   def index
-    @talks = Talk.all
+    @talks = Talk.where("(user_id = ? AND sender_id = ?) OR (user_id = ? AND sender_id = ?)", current_user.id, @user.id, @user.id, current_user.id)
     @talks.where(read: false, user_id: current_user.id).update_all(read: true)
-    @talk = Talk.new
     @talks.where(read: false, sender_id: @user.id).each(&:mark_as_read!)
-  end
+    @talk = Talk.new
+  end  
 
   def create
     @talk = Talk.new(talk_params)

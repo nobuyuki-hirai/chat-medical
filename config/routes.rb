@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/uploads/user/image/:id/:filename', to: 'users#show_image'
+
   get 'rooms/revert/:id', to: 'rooms#revert_check'
 end

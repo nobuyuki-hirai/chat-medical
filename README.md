@@ -13,8 +13,8 @@
  # テスト用アカウント
  * Basic認証 ID： medical
  * Basic認証パスワード： MC119
- * メールアドレス： kano@kano.com
- * パスワード： kano1234
+ * メールアドレス： kanada@kanada.com
+ * パスワード： kanada12
 
  # 利用方法
 
@@ -73,16 +73,19 @@
  #### イベントを作成し、カレンダーに表示されている。イベントから参加ボタンで色が変化される。
  [![Image from Gyazo](https://i.gyazo.com/c9632a98a9ec293c8a5aba29d3571757.gif)](https://gyazo.com/c9632a98a9ec293c8a5aba29d3571757)
 
+ #### フォローしているユーザーとは個別のチャットができる。
+ [![Image from Gyazo](https://i.gyazo.com/ea0a8895018fea31dd736ec1ce26f29f.gif)](https://gyazo.com/ea0a8895018fea31dd736ec1ce26f29f)
+
  # 実施予定の機能
  * チャット機能とフォロー機能の非同期通信
  * フォローしている同士での個別チャット機能
  * 携帯への通知機能
 
  # データベース設計
-[![Image from Gyazo](https://i.gyazo.com/071ed2db57fa48fa14411be8302773d1.png)](https://gyazo.com/071ed2db57fa48fa14411be8302773d1)
+[![Image from Gyazo](https://i.gyazo.com/8d73dd927543a8946570d28e2e8b21f8.png)](https://gyazo.com/8d73dd927543a8946570d28e2e8b21f8)
 
  # 画面遷移図
- [![Image from Gyazo](https://i.gyazo.com/2d05be2359920809cc5fbdd1c274bd59.png)](https://gyazo.com/2d05be2359920809cc5fbdd1c274bd59)
+[![Image from Gyazo](https://i.gyazo.com/19921104f3a0ad53ccda1565f8bb648b.png)](https://gyazo.com/19921104f3a0ad53ccda1565f8bb648b)
 
  # 開発環境
  * MySQL
@@ -100,3 +103,4 @@
 * ページが遷移できるボタンはカーソルがボタン上に置かれると浮き上がるように実装しました。
 * 使い馴染みのあるチャットアプリに見た目を意識しました。
 * カリキュラム外の内容を実装しました。(複数人でのチャット機能、フォロー機能、CSSの装飾、イベント機能)が
+* userによって表示される内容が区別できるように条件分岐を用いて実装しました。

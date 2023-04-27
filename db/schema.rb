@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_13_081144) do
+ActiveRecord::Schema.define(version: 2023_04_27_135038) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -109,6 +109,16 @@ ActiveRecord::Schema.define(version: 2023_04_13_081144) do
     t.index ["user_id"], name: "index_talks_on_user_id"
   end
 
+  create_table "user_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "room_id", null: false
+    t.time "last_read_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_user_messages_on_room_id"
+    t.index ["user_id"], name: "index_user_messages_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "last_name", default: "", null: false
     t.string "first_name", default: "", null: false
@@ -140,4 +150,6 @@ ActiveRecord::Schema.define(version: 2023_04_13_081144) do
   add_foreign_key "rooms", "users", column: "creator_id"
   add_foreign_key "talks", "users"
   add_foreign_key "talks", "users", column: "sender_id"
+  add_foreign_key "user_messages", "rooms"
+  add_foreign_key "user_messages", "users"
 end
